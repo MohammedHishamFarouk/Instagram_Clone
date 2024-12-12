@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:insgram_clone/core/components/custom_textfield_widget.dart';
+import 'package:insgram_clone/core/components/custom_textField_widget.dart';
+import 'package:insgram_clone/view/auth/components/login_button.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -52,21 +53,9 @@ class LoginScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 25.0),
-                      child: SizedBox(
-                        width: double.infinity,
-                        height: 44,
-                        child: FilledButton(
-                          onPressed: () {},
-                          style: FilledButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                          ),
-                          child: const Text('Log in'),
-                        ),
-                      ),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(vertical: 25.0),
+                      child: LoginButtonWidget(),
                     ),
                     TextButton(
                       onPressed: () {},

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:insgram_clone/view/auth/components/login_button.dart';
 
 class StartScreen extends StatelessWidget {
   const StartScreen({super.key});
@@ -37,18 +38,8 @@ class StartScreen extends StatelessWidget {
                         'Mohammed',
                       ),
                     ),
-                    SizedBox(
-                      width: double.infinity,
-                      height: 44,
-                      child: FilledButton(
-                        onPressed: () {},
-                        style: FilledButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5),
-                          ),
-                        ),
-                        child: const Text('Log in'),
-                      ),
+                    LoginButtonWidget(
+                      onPressed: () {},
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 25.0),
