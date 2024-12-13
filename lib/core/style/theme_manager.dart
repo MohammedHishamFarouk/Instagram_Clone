@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:insgram_clone/core/style/color_manager.dart';
 
 class ThemeManager {
   static ThemeData darkTheme = ThemeData(
     scaffoldBackgroundColor: Colors.black,
+    appBarTheme: AppBarTheme(
+      centerTitle: true,
+      backgroundColor: ColorManager.blackShade,
+      foregroundColor: Colors.white,
+    ),
     textTheme: const TextTheme(
       bodyMedium: TextStyle(
         color: Colors.white,
