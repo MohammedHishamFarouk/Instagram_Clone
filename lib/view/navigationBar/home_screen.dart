@@ -9,7 +9,7 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           'Instagram',
-          style: TextStyle(fontFamily: 'LobsterTwo', fontSize: 28),
+          style: TextStyle(fontFamily: 'LobsterTwo', fontSize: 30),
         ),
       ),
       body: Column(

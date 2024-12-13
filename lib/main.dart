@@ -14,7 +14,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeManager.darkTheme,
-      initialRoute: '/home',
       onGenerateRoute: RouteGenerator.generateRoute,
     );
   }
