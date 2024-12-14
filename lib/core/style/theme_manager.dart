@@ -9,6 +9,10 @@ class ThemeManager {
       backgroundColor: ColorManager.blackShade,
       foregroundColor: Colors.white,
     ),
+    listTileTheme: const ListTileThemeData(
+      titleTextStyle: TextStyle(color: Colors.white),
+      subtitleTextStyle: TextStyle(color: Colors.white),
+    ),
     textTheme: const TextTheme(
       bodyMedium: TextStyle(
         color: Colors.white,
