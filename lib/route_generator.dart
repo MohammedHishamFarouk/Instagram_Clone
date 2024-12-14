@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:insgram_clone/view/auth/login_screen.dart';
 import 'package:insgram_clone/view/auth/start_screen.dart';
-import 'package:insgram_clone/view/navigationBar/home_screen.dart';
+import 'package:insgram_clone/view/navigationBar/home/components/home_screen.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
