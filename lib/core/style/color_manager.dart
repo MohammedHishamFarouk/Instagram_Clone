@@ -12,4 +12,13 @@ class ColorManager {
     begin: Alignment.bottomLeft,
     end: Alignment.topRight,
   );
+  static const LinearGradient liveColor = LinearGradient(
+    colors: [
+      Color(0xFFE20337),
+      Color(0xFFC60188),
+      Color(0xFF7700C3),
+    ],
+    begin: Alignment.bottomRight,
+    end: Alignment.topLeft,
+  );
 }

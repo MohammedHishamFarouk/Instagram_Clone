@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:insgram_clone/core/components/custom_textField_widget.dart';
+import 'package:insgram_clone/core/components/custom_textfield_widget.dart';
 import 'package:insgram_clone/view/auth/components/login_button.dart';
 
 class LoginScreen extends StatelessWidget {
