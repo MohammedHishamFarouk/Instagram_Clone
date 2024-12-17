@@ -4,6 +4,9 @@ import 'package:insgram_clone/core/style/color_manager.dart';
 class ThemeManager {
   static ThemeData darkTheme = ThemeData(
     scaffoldBackgroundColor: Colors.black,
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: ColorManager.blackShade,
+    ),
     appBarTheme: AppBarTheme(
       centerTitle: true,
       surfaceTintColor: Colors.transparent,

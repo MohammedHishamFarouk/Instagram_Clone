@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:insgram_clone/core/route_generator.dart';
 import 'package:insgram_clone/core/style/theme_manager.dart';
-import 'package:insgram_clone/route_generator.dart';
 
 void main() {
   runApp(const MyApp());

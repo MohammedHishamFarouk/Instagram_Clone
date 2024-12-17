@@ -15,7 +15,19 @@ class Assets {
 
   static const String commentSVG = 'assets/svgIcons/Comment.svg';
 
+  static const String filledLikeSVG = 'assets/svgIcons/filledLike.svg';
+
   static const String likeSVG = 'assets/svgIcons/Like.svg';
+
+  static const String createSVG = 'assets/svgIcons/create.svg';
+
+  static const String filledHomeSVG = 'assets/svgIcons/filledHome.svg';
+
+  static const String homeSVG = 'assets/svgIcons/home.svg';
+
+  static const String filledSearchSVG = 'assets/svgIcons/filledSearch.svg';
+
+  static const String searchSVG = 'assets/svgIcons/search.svg';
 
   static const String noProfile = 'assets/deblured-cutty-fox.jpg';
 

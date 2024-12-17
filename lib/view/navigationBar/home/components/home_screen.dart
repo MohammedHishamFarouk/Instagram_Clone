@@ -90,6 +90,39 @@ class HomeScreen extends StatelessWidget {
           )
         ],
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        items: [
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(Assets.homeSVG),
+            label: '',
+            activeIcon: SvgPicture.asset(Assets.filledHomeSVG),
+          ),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(Assets.searchSVG),
+            label: '',
+            activeIcon: SvgPicture.asset(Assets.filledSearchSVG),
+          ),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(Assets.createSVG),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(Assets.likeSVG),
+            label: '',
+            activeIcon: SvgPicture.asset(Assets.filledLikeSVG),
+          ),
+          const BottomNavigationBarItem(
+            icon: CircleAvatar(
+              radius: 11.5,
+              backgroundImage: AssetImage(Assets.noProfile),
+            ),
+            label: '',
+          ),
+        ],
+      ),
     );
   }
 }
