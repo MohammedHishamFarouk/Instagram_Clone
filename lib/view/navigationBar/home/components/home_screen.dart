@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:insgram_clone/core/components/post.dart';
+import 'package:insgram_clone/core/components/story_button.dart';
 import 'package:insgram_clone/core/constants/assets.dart';
-import 'package:insgram_clone/view/navigationBar/home/components/story_button.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
