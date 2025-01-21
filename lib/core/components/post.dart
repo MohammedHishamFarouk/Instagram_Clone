@@ -1,9 +1,9 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:insgram_clone/core/components/custom_icons.dart';
+import 'package:insgram_clone/core/components/story_button.dart';
 import 'package:insgram_clone/core/constants/assets.dart';
-import 'package:insgram_clone/view/navigationBar/home/components/story_button.dart';
 
 class Post extends StatelessWidget {
   const Post({
@@ -22,20 +22,19 @@ class Post extends StatelessWidget {
             size: 16,
             borderSize: 2,
           ),
-          title: Row(
+          title: const Row(
             children: [
-              const Text(
+              Text(
                 'mohammed',
                 style: TextStyle(fontSize: 13),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 4.0),
-                child: SvgPicture.asset(
-                  Assets.officialSVG,
-                  height: 10,
-                  width: 10,
-                ),
-              ),
+                  padding: EdgeInsets.only(left: 4.0),
+                  child: CustomSvgIcon(
+                    assetName: Assets.officialSVG,
+                    height: 10,
+                    width: 10,
+                  )),
             ],
           ),
           subtitle: const Padding(
@@ -47,9 +46,9 @@ class Post extends StatelessWidget {
           ),
           trailing: GestureDetector(
             onTap: () {},
-            child: SizedBox(
-              child: SvgPicture.asset(
-                Assets.moreSVG,
+            child: const SizedBox(
+              child: CustomSvgIcon(
+                assetName: Assets.moreSVG,
                 height: 3,
                 width: 14,
               ),
@@ -73,20 +72,20 @@ class Post extends StatelessWidget {
           children: [
             IconButton(
               onPressed: () {},
-              icon: SvgPicture.asset(Assets.likeSVG),
+              icon: const CustomSvgIcon(assetName: Assets.likeSVG),
             ),
             IconButton(
               onPressed: () {},
-              icon: SvgPicture.asset(Assets.commentSVG),
+              icon: const CustomSvgIcon(assetName: Assets.commentSVG),
             ),
             IconButton(
               onPressed: () {},
-              icon: SvgPicture.asset(Assets.messengerSVG),
+              icon: const CustomSvgIcon(assetName: Assets.messengerSVG),
             ),
             const Spacer(),
             IconButton(
               onPressed: () {},
-              icon: SvgPicture.asset(Assets.saveSVG),
+              icon: const CustomSvgIcon(assetName: Assets.saveSVG),
             )
           ],
         ),

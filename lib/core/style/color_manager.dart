@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ColorManager {
-  static Color blackShade = Colors.grey.shade900;
+  static const Color darkGrey = Color(0xff212121);
+  static const Color grey = Colors.grey;
+  static const Color lightGrey = Color(0x1A808080);
 
   static const LinearGradient signatureColor = LinearGradient(
     colors: [
@@ -20,5 +22,14 @@ class ColorManager {
     ],
     begin: Alignment.bottomRight,
     end: Alignment.topLeft,
+  );
+
+  static const LinearGradient blueGradient = LinearGradient(
+    colors: [
+      Color(0xFF6FC7FC),
+      Color(0xFF378DEF),
+    ],
+    begin: Alignment.bottomLeft,
+    end: Alignment.topRight,
   );
 }

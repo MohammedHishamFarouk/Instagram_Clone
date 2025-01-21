@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:insgram_clone/core/components/custom_icons.dart';
 import 'package:insgram_clone/core/components/post.dart';
 import 'package:insgram_clone/core/components/story_button.dart';
 import 'package:insgram_clone/core/constants/assets.dart';
@@ -50,8 +50,8 @@ class HomeScreen extends StatelessWidget {
         leading: IconButton(
           onPressed: () {},
           padding: EdgeInsets.zero,
-          icon: SvgPicture.asset(
-            Assets.cameraSVG,
+          icon: const CustomSvgIcon(
+            assetName: Assets.cameraSVG,
             height: 25,
             width: 24,
           ),
@@ -59,16 +59,16 @@ class HomeScreen extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: SvgPicture.asset(
-              Assets.igtvRedCircleSVG,
+            icon: const CustomSvgIcon(
+              assetName: Assets.igtvRedCircleSVG,
               height: 25,
               width: 24,
             ),
           ),
           IconButton(
-            onPressed: () {},
-            icon: SvgPicture.asset(
-              Assets.messengerSVG,
+            onPressed: () => Navigator.of(context).pushNamed('/messages'),
+            icon: const CustomSvgIcon(
+              assetName: Assets.messengerSVG,
               height: 20,
               width: 23,
             ),
@@ -88,39 +88,6 @@ class HomeScreen extends StatelessWidget {
               itemCount: storyAndPosts.length,
             ),
           )
-        ],
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        items: [
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(Assets.homeSVG),
-            label: '',
-            activeIcon: SvgPicture.asset(Assets.filledHomeSVG),
-          ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(Assets.searchSVG),
-            label: '',
-            activeIcon: SvgPicture.asset(Assets.filledSearchSVG),
-          ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(Assets.createSVG),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(Assets.likeSVG),
-            label: '',
-            activeIcon: SvgPicture.asset(Assets.filledLikeSVG),
-          ),
-          const BottomNavigationBarItem(
-            icon: CircleAvatar(
-              radius: 11.5,
-              backgroundImage: AssetImage(Assets.noProfile),
-            ),
-            label: '',
-          ),
         ],
       ),
     );

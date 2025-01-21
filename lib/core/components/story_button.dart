@@ -9,10 +9,12 @@ class StoryButton extends StatelessWidget {
     this.size = 28,
     this.borderSize = 3,
     this.live = false,
+    this.seen = false,
   });
 
   final bool addText;
   final bool live;
+  final bool seen;
   final double size;
   final double borderSize;
 
@@ -26,20 +28,28 @@ class StoryButton extends StatelessWidget {
             DecoratedBox(
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                gradient:
-                    live ? ColorManager.liveColor : ColorManager.signatureColor,
+                gradient: live
+                    ? ColorManager.liveColor
+                    : seen
+                        ? null
+                        : ColorManager.signatureColor,
               ),
-              //changes the border size
               child: Padding(
+                // Adjust borderSize as needed
                 padding: EdgeInsets.all(borderSize),
-                //uses the same color as the background to look like a gap between the gradient and image
-                child: CircleAvatar(
-                  backgroundColor: Colors.black,
-                  radius: size + 3,
-                  child: CircleAvatar(
-                    backgroundColor: Colors.transparent,
-                    radius: size,
-                    backgroundImage: const AssetImage(Assets.noProfile),
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Theme.of(context).primaryColor,
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(3.0),
+                    // Additional padding to create the gap
+                    child: CircleAvatar(
+                      backgroundColor: Colors.transparent,
+                      radius: size,
+                      backgroundImage: const AssetImage(Assets.noProfile),
+                    ),
                   ),
                 ),
               ),
@@ -82,4 +92,14 @@ class StoryButton extends StatelessWidget {
       ],
     );
   }
+}
+
+class CircleClipper extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    return Path()..addOval(Rect.fromLTWH(0, 0, size.width, size.height));
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) => false;
 }

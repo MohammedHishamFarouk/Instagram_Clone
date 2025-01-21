@@ -1,33 +1,52 @@
+//make sure that the asset name is the same for both the light and dark version
 class Assets {
-  static const String cameraSVG = 'assets/svgIcons/Camera Icon.svg';
+  static const String lightAssetBaseUrl = 'assets/lightSvgIcons/';
 
-  static const String igtvSVG = 'assets/svgIcons/IGTV.svg';
+  static const String darkAssetBaseUrl = 'assets/darkSvgIcons/';
 
-  static const String igtvRedCircleSVG = 'assets/svgIcons/IGTV_red_circle.svg';
+  static const String cameraSVG = 'Camera Icon.svg';
 
-  static const String messengerSVG = 'assets/svgIcons/Messanger.svg';
+  static const String gradientCameraSVG = 'gradient_camera.svg';
 
-  static const String officialSVG = 'assets/svgIcons/Official Icon.svg';
+  static const String igtvSVG = 'IGTV.svg';
 
-  static const String moreSVG = 'assets/svgIcons/More Icon.svg';
+  static const String igtvRedCircleSVG = 'IGTV_red_circle.svg';
 
-  static const String saveSVG = 'assets/svgIcons/Save.svg';
+  static const String messengerSVG = 'Messanger.svg';
 
-  static const String commentSVG = 'assets/svgIcons/Comment.svg';
+  static const String plusSVG = 'Add Chat.svg';
 
-  static const String filledLikeSVG = 'assets/svgIcons/filledLike.svg';
+  static const String officialSVG = 'Official Icon.svg';
 
-  static const String likeSVG = 'assets/svgIcons/Like.svg';
+  static const String moreSVG = 'More Icon.svg';
 
-  static const String createSVG = 'assets/svgIcons/create.svg';
+  static const String saveSVG = 'Save.svg';
 
-  static const String filledHomeSVG = 'assets/svgIcons/filledHome.svg';
+  static const String commentSVG = 'Comment.svg';
 
-  static const String homeSVG = 'assets/svgIcons/home.svg';
+  static const String filledLikeSVG = 'filledLike.svg';
 
-  static const String filledSearchSVG = 'assets/svgIcons/filledSearch.svg';
+  static const String likeSVG = 'Like.svg';
 
-  static const String searchSVG = 'assets/svgIcons/search.svg';
+  static const String menuSVG = 'Menu.svg';
+
+  static const String lockSVG = 'lock.svg';
+
+  static const String gridSVG = 'Grid Icon.svg';
+
+  static const String tagsSVG = 'Tags Icon.svg';
+
+  static const String createSVG = 'create.svg';
+
+  static const String filledHomeSVG = 'filledHome.svg';
+
+  static const String homeSVG = 'home.svg';
+
+  static const String filledSearchSVG = 'filledSearch.svg';
+
+  static const String searchSVG = 'search.svg';
+
+  static const String searchBarSVG = 'search_bar_icon.svg';
 
   static const String noProfile = 'assets/deblured-cutty-fox.jpg';
 
