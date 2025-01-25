@@ -11,7 +11,7 @@ class LayoutConstrain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DecoratedBox(
-      decoration: BoxDecoration(color: Theme.of(context).primaryColor),
+      decoration: const BoxDecoration(color: Colors.black),
       child: Center(
         child: ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 700),
