@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:insgram_clone/view/auth/components/login_button.dart';
 
-class StartScreen extends StatelessWidget {
-  const StartScreen({super.key});
+class SwitchAccountScreen extends StatelessWidget {
+  const SwitchAccountScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

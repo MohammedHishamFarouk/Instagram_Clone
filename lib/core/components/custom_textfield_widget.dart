@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:insgram_clone/modelView/authentication/auth_cubit.dart';
 
 class CustomTextFieldWidget extends StatelessWidget {
   const CustomTextFieldWidget({
@@ -11,6 +13,7 @@ class CustomTextFieldWidget extends StatelessWidget {
     this.obscureText = false,
     this.suffixIcon,
     this.onSuffixTapped,
+    required this.controller,
   });
 
   final String hintText;
@@ -20,6 +23,7 @@ class CustomTextFieldWidget extends StatelessWidget {
   final Widget? suffixIcon;
   final bool obscureText;
   final double imageScale;
+  final TextEditingController controller;
   final VoidCallback? onSuffixTapped;
 
   @override
@@ -29,6 +33,7 @@ class CustomTextFieldWidget extends StatelessWidget {
       child: Form(
         // ToDo Color Switching
         child: TextFormField(
+          controller: controller,
           minLines: null,
           maxLines: null,
           expands: true,
@@ -66,6 +71,9 @@ class CustomTextFieldWidget extends StatelessWidget {
               borderSide: const BorderSide(color: Colors.grey),
             ),
           ),
+          onChanged: (value) {
+            context.read<AuthCubit>().textFieldFilled();
+          },
         ),
       ),
     );
