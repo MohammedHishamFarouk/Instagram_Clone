@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:insgram_clone/core/constants/assets.dart';
 import 'package:insgram_clone/core/style/color_manager.dart';
+import 'package:insgram_clone/modelView/authentication/auth_cubit.dart';
 
 class CustomTable extends StatelessWidget {
   const CustomTable({super.key});
@@ -33,17 +36,30 @@ class CustomTable extends StatelessWidget {
           padding: EdgeInsets.only(top: 15.0),
           child: Divider(color: ColorManager.lightGrey),
         ),
-        const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 14.0),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 14.0),
           child: Column(
             spacing: 5,
             children: [
-              _NewTableRow(text1: 'Name       '),
-              _NewTableRow(text1: 'UserName'),
-              _NewTableRow(text1: 'Website    '),
+              _NewTableRow(
+                text1: 'Name       ',
+                controller: context.read<AuthCubit>().editName,
+                maxLength: 30,
+              ),
+              _NewTableRow(
+                text1: 'UserName',
+                controller: context.read<AuthCubit>().editUserName,
+                maxLength: 20,
+              ),
+              _NewTableRow(
+                text1: 'Website    ',
+                controller: context.read<AuthCubit>().editWebsite,
+              ),
               _NewTableRow(
                 text1: 'Bio            ',
                 borderColor: Colors.transparent,
+                maxLength: 100,
+                controller: context.read<AuthCubit>().editBio,
               ),
             ],
           ),
@@ -70,9 +86,18 @@ class CustomTable extends StatelessWidget {
           child: Column(
             spacing: 5,
             children: [
-              _NewTableRow(text1: 'Email       '),
-              _NewTableRow(text1: 'Phone      '),
-              _NewTableRow(text1: 'Gender    '),
+              _NewTableRow(
+                text1: 'Email       ',
+                enabled: false,
+              ),
+              _NewTableRow(
+                text1: 'Phone      ',
+                enabled: false,
+              ),
+              _NewTableRow(
+                text1: 'Gender    ',
+                enabled: false,
+              ),
             ],
           ),
         ),
@@ -85,10 +110,16 @@ class _NewTableRow extends StatelessWidget {
   const _NewTableRow({
     required this.text1,
     this.borderColor = ColorManager.lightGrey,
+    this.maxLength,
+    this.controller,
+    this.enabled = true,
   });
 
   final String text1;
   final Color borderColor;
+  final int? maxLength;
+  final TextEditingController? controller;
+  final bool enabled;
 
   @override
   Widget build(BuildContext context) {
@@ -103,9 +134,16 @@ class _NewTableRow extends StatelessWidget {
           ),
           Flexible(
             child: TextField(
+              enabled: enabled,
+              controller: controller,
               style: const TextStyle(
                 fontSize: 15,
+                height: 1.2,
               ),
+              maxLines: null,
+              inputFormatters: [
+                LengthLimitingTextInputFormatter(maxLength),
+              ],
               decoration: InputDecoration(
                 enabledBorder: UnderlineInputBorder(
                   borderSide: BorderSide(

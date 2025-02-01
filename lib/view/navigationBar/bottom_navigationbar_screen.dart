@@ -3,7 +3,7 @@ import 'package:insgram_clone/core/components/custom_icons.dart';
 import 'package:insgram_clone/core/constants/assets.dart';
 import 'package:insgram_clone/view/navigationBar/home/home_screen.dart';
 import 'package:insgram_clone/view/navigationBar/likes/likes_screen.dart';
-import 'package:insgram_clone/view/navigationBar/profile/profile_screen.dart';
+import 'package:insgram_clone/view/navigationBar/profile/profile/profile_screen.dart';
 
 class BottomNavigationBarScreen extends StatefulWidget {
   const BottomNavigationBarScreen({super.key});

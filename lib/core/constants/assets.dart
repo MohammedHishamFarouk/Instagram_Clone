@@ -48,7 +48,7 @@ class Assets {
 
   static const String searchBarSVG = 'search_bar_icon.svg';
 
-  static const String noProfile = 'assets/deblured-cutty-fox.jpg';
+  static const String noProfile = 'assets/noProfile.webp';
 
   static const String trial1 = 'assets/trial1.jpg';
 

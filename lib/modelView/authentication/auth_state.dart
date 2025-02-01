@@ -26,3 +26,13 @@ final class SignUpFailure extends AuthState {
 }
 
 final class TextFieldFilled extends AuthState {}
+
+final class EditProfileSuccess extends AuthState {}
+
+final class EditProfileLoading extends AuthState {}
+
+final class EditProfileFailure extends AuthState {
+  final String errorMessage;
+
+  EditProfileFailure({required this.errorMessage});
+}

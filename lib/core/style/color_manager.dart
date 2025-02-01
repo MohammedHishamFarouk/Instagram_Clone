@@ -4,6 +4,8 @@ class ColorManager {
   static const Color darkGrey = Color(0xff212121);
   static const Color grey = Colors.grey;
   static const Color lightGrey = Color(0x1A808080);
+  static const Color semiTransBlue = Color.fromARGB(128, 30, 144, 255);
+  static const Color semiTransWhite = Color.fromARGB(128, 255, 255, 255);
 
   static const LinearGradient signatureColor = LinearGradient(
     colors: [

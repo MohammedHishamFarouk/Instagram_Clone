@@ -17,7 +17,7 @@ void main() async {
   runApp(MultiBlocProvider(
     providers: [
       BlocProvider(create: (context) => ThemeManagerCubit()),
-      BlocProvider(create: (context) => AuthCubit()),
+      BlocProvider(create: (context) => AuthCubit()..checkForUser()),
     ],
     child: const MyApp(),
   ));

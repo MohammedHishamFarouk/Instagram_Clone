@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:insgram_clone/view/auth/components/login_button.dart';
+import 'package:insgram_clone/core/constants/assets.dart';
+import 'package:insgram_clone/view/auth/components/auth_button.dart';
 
 class SwitchAccountScreen extends StatelessWidget {
   const SwitchAccountScreen({super.key});
@@ -29,8 +30,7 @@ class SwitchAccountScreen extends StatelessWidget {
                     ),
                     const CircleAvatar(
                       radius: 42.5,
-                      backgroundImage:
-                          AssetImage('assets/deblured-cutty-fox.jpg'),
+                      backgroundImage: AssetImage(Assets.noProfile),
                     ),
                     const Padding(
                       padding: EdgeInsets.symmetric(vertical: 10.0),
@@ -38,7 +38,8 @@ class SwitchAccountScreen extends StatelessWidget {
                         'Mohammed',
                       ),
                     ),
-                    LoginButtonWidget(
+                    AuthButton(
+                      register: false,
                       onPressed: () {},
                     ),
                     Padding(
