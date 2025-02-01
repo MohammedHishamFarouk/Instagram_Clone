@@ -12,6 +12,8 @@ class Assets {
 
   static const String igtvRedCircleSVG = 'IGTV_red_circle.svg';
 
+  static const String shopSVG = 'shop.svg';
+
   static const String messengerSVG = 'Messanger.svg';
 
   static const String plusSVG = 'Add Chat.svg';
@@ -31,6 +33,8 @@ class Assets {
   static const String menuSVG = 'Menu.svg';
 
   static const String lockSVG = 'lock.svg';
+
+  static const String liveSVG = 'Live.svg';
 
   static const String gridSVG = 'Grid Icon.svg';
 

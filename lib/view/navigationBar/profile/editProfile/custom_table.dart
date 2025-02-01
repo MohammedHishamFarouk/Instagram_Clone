@@ -81,20 +81,21 @@ class CustomTable extends StatelessWidget {
             style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
           ),
         ),
-        const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 14.0),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 14.0),
           child: Column(
             spacing: 5,
             children: [
               _NewTableRow(
                 text1: 'Email       ',
                 enabled: false,
+                controller: context.read<AuthCubit>().editEmail,
               ),
-              _NewTableRow(
+              const _NewTableRow(
                 text1: 'Phone      ',
                 enabled: false,
               ),
-              _NewTableRow(
+              const _NewTableRow(
                 text1: 'Gender    ',
                 enabled: false,
               ),

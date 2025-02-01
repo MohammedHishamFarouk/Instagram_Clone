@@ -5,7 +5,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:insgram_clone/core/constants/fire_keys.dart';
-import 'package:insgram_clone/model/user_model.dart';
 
 part 'auth_state.dart';
 
@@ -36,13 +35,11 @@ class AuthCubit extends Cubit<AuthState> {
 
   TextEditingController editBio = TextEditingController();
 
+  TextEditingController editEmail = TextEditingController();
+
   User? user;
 
-  UserModel _userFromFirebase(User user) {
-    return UserModel(uid: user.uid);
-  }
-
-  textFieldFilled() {
+  void textFieldFilled() {
     emit(TextFieldFilled());
   }
 
@@ -63,12 +60,11 @@ class AuthCubit extends Cubit<AuthState> {
           editUserName.text = userData![FireKeys.userName];
           if (userData!.containsKey(FireKeys.website)) {
             editWebsite.text = userData![FireKeys.website];
-            log(editWebsite.text);
           }
           if (userData!.containsKey(FireKeys.bio)) {
             editBio.text = userData![FireKeys.bio];
-            log(editBio.text);
           }
+          editEmail.text = user.email.toString();
         }
         emit(SignInSuccess());
       } else {

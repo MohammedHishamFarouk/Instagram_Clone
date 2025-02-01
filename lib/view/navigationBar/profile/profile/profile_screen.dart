@@ -6,7 +6,7 @@ import 'package:insgram_clone/core/components/story_button.dart';
 import 'package:insgram_clone/core/constants/assets.dart';
 import 'package:insgram_clone/core/constants/fire_keys.dart';
 import 'package:insgram_clone/modelView/authentication/auth_cubit.dart';
-import 'package:insgram_clone/view/navigationBar/profile/profile/profile_info.dart';
+import 'package:insgram_clone/view/navigationBar/profile/profile/componenets/profile_info.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -70,7 +70,7 @@ class ProfileScreen extends StatelessWidget {
           ),
           actions: [
             IconButton(
-              onPressed: () => context.read<AuthCubit>().signOut(context),
+              onPressed: () {},
               icon: const CustomSvgIcon(assetName: Assets.menuSVG),
               iconSize: 22,
             ),

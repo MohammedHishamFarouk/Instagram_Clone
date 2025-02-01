@@ -4,6 +4,7 @@ import 'package:insgram_clone/core/constants/assets.dart';
 import 'package:insgram_clone/view/navigationBar/home/home_screen.dart';
 import 'package:insgram_clone/view/navigationBar/likes/likes_screen.dart';
 import 'package:insgram_clone/view/navigationBar/profile/profile/profile_screen.dart';
+import 'package:insgram_clone/view/navigationBar/search/search_screen.dart';
 
 class BottomNavigationBarScreen extends StatefulWidget {
   const BottomNavigationBarScreen({super.key});
@@ -17,7 +18,7 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
   int _selectedIndex = 0;
   final List<Widget> _pages = [
     const HomeScreen(),
-    const Card(color: Colors.blueAccent),
+    const SearchScreen(),
     const Card(color: Colors.blueGrey),
     const LikesScreen(),
     const ProfileScreen(),

@@ -11,6 +11,7 @@ class ChatBox extends StatelessWidget {
     required this.latestMessage,
     required this.sentTime,
     this.messageSeen = false,
+    this.showIcon = true,
   });
 
   final String profilePic;
@@ -18,6 +19,7 @@ class ChatBox extends StatelessWidget {
   final String latestMessage;
   final String sentTime;
   final bool messageSeen;
+  final bool showIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -61,20 +63,26 @@ class ChatBox extends StatelessWidget {
                 maxLines: 1,
               ),
             ),
-            Text(
-              '· $sentTime',
-              style: const TextStyle(fontSize: 13, color: ColorManager.grey),
+            Visibility(
+              visible: showIcon,
+              child: Text(
+                '· $sentTime',
+                style: const TextStyle(fontSize: 13, color: ColorManager.grey),
+              ),
             ),
           ],
         ),
-        trailing: IconButton(
-          onPressed: () {},
-          padding: EdgeInsets.zero,
-          icon: const CustomSvgIcon(
-            assetName: Assets.cameraSVG,
-            height: 22,
-            width: 24,
-            color: ColorManager.grey,
+        trailing: Visibility(
+          visible: showIcon,
+          child: IconButton(
+            onPressed: () {},
+            padding: EdgeInsets.zero,
+            icon: const CustomSvgIcon(
+              assetName: Assets.cameraSVG,
+              height: 22,
+              width: 24,
+              color: ColorManager.grey,
+            ),
           ),
         ),
       ),

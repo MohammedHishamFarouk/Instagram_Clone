@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:insgram_clone/core/firebase_options.dart';
 import 'package:insgram_clone/core/style/theme_manager.dart';
 import 'package:insgram_clone/modelView/authentication/auth_cubit.dart';
+import 'package:insgram_clone/modelView/search/search_cubit.dart';
 import 'package:insgram_clone/modelView/themeManager/theme_manager_cubit.dart';
 import 'package:insgram_clone/route_generator.dart';
 import 'package:insgram_clone/view/layout_constrain.dart';
@@ -17,6 +18,7 @@ void main() async {
   runApp(MultiBlocProvider(
     providers: [
       BlocProvider(create: (context) => ThemeManagerCubit()),
+      BlocProvider(create: (context) => SearchCubit()),
       BlocProvider(create: (context) => AuthCubit()..checkForUser()),
     ],
     child: const MyApp(),
