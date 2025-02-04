@@ -5,6 +5,7 @@ import 'package:insgram_clone/core/components/custom_icons.dart';
 import 'package:insgram_clone/core/components/custom_search_bar.dart';
 import 'package:insgram_clone/core/constants/assets.dart';
 import 'package:insgram_clone/core/constants/fire_keys.dart';
+import 'package:insgram_clone/generated/l10n.dart';
 import 'package:insgram_clone/modelView/search/search_cubit.dart';
 import 'package:insgram_clone/view/navigationBar/directMessages/components/chat_box.dart';
 import 'package:insgram_clone/view/navigationBar/search/custom_tab_bar.dart';
@@ -102,8 +103,8 @@ class SearchScreen extends StatelessWidget {
                       );
                     case SearchSuccess():
                       if (context.read<SearchCubit>().users.isEmpty) {
-                        return const Center(
-                          child: Text('No Users found'),
+                        return Center(
+                          child: Text(S.of(context).noUsers),
                         );
                       }
                       return ListView.separated(
@@ -121,8 +122,8 @@ class SearchScreen extends StatelessWidget {
                         },
                       );
                     case SearchFailure():
-                      return const Center(
-                        child: Text('Something went wrong'),
+                      return Center(
+                        child: Text(S.of(context).somethingWentWrong),
                       );
                     default:
                       return GridView.custom(

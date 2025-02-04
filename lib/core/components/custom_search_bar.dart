@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:insgram_clone/core/components/custom_icons.dart';
 import 'package:insgram_clone/core/constants/assets.dart';
+import 'package:insgram_clone/generated/l10n.dart';
 
 class CustomSearchBar extends StatelessWidget {
   const CustomSearchBar({super.key, this.controller, this.onChanged});
@@ -15,7 +16,7 @@ class CustomSearchBar extends StatelessWidget {
       child: SearchBar(
         controller: controller,
         leading: const CustomSvgIcon(assetName: Assets.searchBarSVG),
-        hintText: 'Search',
+        hintText: S.of(context).search,
         onChanged: onChanged,
       ),
     );

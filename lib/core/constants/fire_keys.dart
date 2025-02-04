@@ -4,4 +4,5 @@ class FireKeys {
   static const String website = 'Website';
   static const String bio = 'bio';
   static const String isDark = 'isDark';
+  static const String isEnglish = 'isEnglish';
 }

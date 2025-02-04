@@ -14,16 +14,36 @@ class ThemeManagerCubit extends Cubit<ThemeManagerState> {
   final FirebaseFirestore _fireStore = FirebaseFirestore.instance;
 
   bool isDark = true;
+  bool isEnglish = true;
   bool isDrawerOpen = false;
 
-  void changeTheme(BuildContext context) async {
-    isDark = !isDark;
-    isDark ? emit(DarkTheme()) : emit(LightTheme());
+  changeTheme(BuildContext context) async {
     try {
+      isDark = !isDark;
       await _fireStore
           .collection('users')
           .doc(context.read<AuthCubit>().user!.uid)
-          .set({'isDark': isDark}, SetOptions(merge: true));
+          .set(
+        {'isDark': isDark},
+        SetOptions(merge: true),
+      );
+      emit(ThemeChanged());
+    } catch (e) {
+      log(e.toString());
+    }
+  }
+
+  changeLocale(BuildContext context) async {
+    try {
+      isEnglish = !isEnglish;
+      await _fireStore
+          .collection('users')
+          .doc(context.read<AuthCubit>().user!.uid)
+          .set(
+        {'isEnglish': isEnglish},
+        SetOptions(merge: true),
+      );
+      emit(ThemeChanged());
     } catch (e) {
       log(e.toString());
     }
@@ -37,10 +57,11 @@ class ThemeManagerCubit extends Cubit<ThemeManagerState> {
           .get();
       if (doc.exists && doc.data() != null) {
         isDark = doc.data()![FireKeys.isDark];
-        isDark ? emit(DarkTheme()) : emit(LightTheme());
+        isEnglish = doc.data()![FireKeys.isEnglish];
+        emit(ThemeChanged());
       }
     } catch (e) {
-      log(e.toString());
+      log('here is the error${e.toString()}');
     }
   }
 

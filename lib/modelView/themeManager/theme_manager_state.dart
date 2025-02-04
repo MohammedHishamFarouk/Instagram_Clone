@@ -5,8 +5,8 @@ sealed class ThemeManagerState {}
 
 final class ThemeManagerInitial extends ThemeManagerState {}
 
-final class DarkTheme extends ThemeManagerState {}
+final class ThemeChanged extends ThemeManagerState {}
 
-final class LightTheme extends ThemeManagerState {}
+final class LocaleChanged extends ThemeManagerState {}
 
 final class DrawerMoved extends ThemeManagerState {}

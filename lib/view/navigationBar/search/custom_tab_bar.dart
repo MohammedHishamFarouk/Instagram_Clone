@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:insgram_clone/core/components/custom_icons.dart';
 import 'package:insgram_clone/core/constants/assets.dart';
 import 'package:insgram_clone/core/style/color_manager.dart';
+import 'package:insgram_clone/generated/l10n.dart';
 import 'package:insgram_clone/modelView/search/search_cubit.dart';
 
 class CustomTabBar extends StatelessWidget {
@@ -10,15 +11,15 @@ class CustomTabBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> children = const [
+    List<Widget> children = [
       Row(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.center,
         spacing: 5,
         children: [
-          CustomSvgIcon(assetName: Assets.igtvSVG),
+          const CustomSvgIcon(assetName: Assets.igtvSVG),
           Text(
-            'IGTV',
+            S.of(context).IGTV,
           ),
         ],
       ),
@@ -27,23 +28,23 @@ class CustomTabBar extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         spacing: 5,
         children: [
-          CustomSvgIcon(assetName: Assets.shopSVG),
+          const CustomSvgIcon(assetName: Assets.shopSVG),
           Text(
-            'Shop',
+            S.of(context).shop,
           ),
         ],
       ),
       Text(
-        'Style',
+        S.of(context).style,
       ),
       Text(
-        'Sports',
+        S.of(context).sports,
       ),
       Text(
-        'Auto',
+        S.of(context).auto,
       ),
       Text(
-        'Music',
+        S.of(context).music,
       ),
     ];
     return SizedBox(

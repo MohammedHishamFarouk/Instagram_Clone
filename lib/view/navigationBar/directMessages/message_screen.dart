@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:insgram_clone/core/components/custom_icons.dart';
 import 'package:insgram_clone/core/components/custom_search_bar.dart';
 import 'package:insgram_clone/core/constants/assets.dart';
+import 'package:insgram_clone/generated/l10n.dart';
 import 'package:insgram_clone/view/navigationBar/directMessages/components/chat_box.dart';
 
 class MessagesScreen extends StatelessWidget {
@@ -75,15 +76,15 @@ class MessagesScreen extends StatelessWidget {
                   EdgeInsets.only(bottom: MediaQuery.paddingOf(context).bottom),
               child: IconButton(
                 onPressed: () {},
-                icon: const Row(
+                icon: Row(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.center,
                   spacing: 5,
                   children: [
-                    CustomSvgIcon(assetName: Assets.gradientCameraSVG),
+                    const CustomSvgIcon(assetName: Assets.gradientCameraSVG),
                     Text(
-                      'Camera',
-                      style: TextStyle(color: Colors.blue, fontSize: 13),
+                      S.of(context).camera,
+                      style: const TextStyle(color: Colors.blue, fontSize: 13),
                     )
                   ],
                 ),

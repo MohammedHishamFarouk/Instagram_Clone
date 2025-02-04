@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:insgram_clone/core/components/custom_icons.dart';
 import 'package:insgram_clone/core/constants/assets.dart';
+import 'package:insgram_clone/generated/l10n.dart';
 import 'package:insgram_clone/modelView/themeManager/theme_manager_cubit.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -22,12 +23,20 @@ class SettingsScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(15.0),
         child: Column(
+          spacing: 15,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text('change theme'),
-                _ToggleButton(),
+                Text(S.of(context).changeTheme),
+                const _ToggleButton(),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(S.of(context).changeLang),
+                const _ToggleButton(),
               ],
             ),
           ],
@@ -38,6 +47,8 @@ class SettingsScreen extends StatelessWidget {
 }
 
 class _ToggleButton extends StatelessWidget {
+  const _ToggleButton();
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

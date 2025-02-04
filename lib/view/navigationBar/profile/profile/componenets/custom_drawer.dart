@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:insgram_clone/core/components/custom_icons.dart';
 import 'package:insgram_clone/core/constants/assets.dart';
 import 'package:insgram_clone/core/constants/fire_keys.dart';
+import 'package:insgram_clone/generated/l10n.dart';
 import 'package:insgram_clone/modelView/authentication/auth_cubit.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -34,49 +35,49 @@ class CustomDrawer extends StatelessWidget {
                   leading: const CustomSvgIcon(
                     assetName: Assets.archiveSVG,
                   ),
-                  title: const Text('Archive'),
+                  title: Text(S.of(context).archive),
                   onTap: () {},
                 ),
                 ListTile(
                   leading: const CustomSvgIcon(
                     assetName: Assets.activitySVG,
                   ),
-                  title: const Text('Your Activity'),
+                  title: Text(S.of(context).yourActivity),
                   onTap: () {},
                 ),
                 ListTile(
                   leading: const CustomSvgIcon(
                     assetName: Assets.liveSVG,
                   ),
-                  title: const Text('Nametag'),
+                  title: Text(S.of(context).nameTag),
                   onTap: () {},
                 ),
                 ListTile(
                   leading: const CustomSvgIcon(
                     assetName: Assets.saveSVG,
                   ),
-                  title: const Text('Save'),
+                  title: Text(S.of(context).save),
                   onTap: () {},
                 ),
                 ListTile(
                   leading: const CustomSvgIcon(
                     assetName: Assets.closeFriendsSVG,
                   ),
-                  title: const Text('Close Friends'),
+                  title: Text(S.of(context).closeFriends),
                   onTap: () {},
                 ),
                 ListTile(
                   leading: const CustomSvgIcon(
                     assetName: Assets.addPeopleSVG,
                   ),
-                  title: const Text('Discover People'),
+                  title: Text(S.of(context).discoverPeople),
                   onTap: () {},
                 ),
                 ListTile(
                   leading: const CustomSvgIcon(
                     assetName: Assets.openFaceSVG,
                   ),
-                  title: const Text('Open Facebook'),
+                  title: Text(S.of(context).openFacebook),
                   onTap: () {},
                 ),
               ],
@@ -86,7 +87,7 @@ class CustomDrawer extends StatelessWidget {
             leading: const CustomSvgIcon(
               assetName: Assets.settingsSVG,
             ),
-            title: const Text('Settings'),
+            title: Text(S.of(context).settings),
             onTap: () {
               Navigator.pushNamed(context, '/settings');
             },

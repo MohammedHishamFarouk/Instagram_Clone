@@ -4,6 +4,7 @@ import 'package:insgram_clone/core/components/custom_icons.dart';
 import 'package:insgram_clone/core/components/story_button.dart';
 import 'package:insgram_clone/core/constants/assets.dart';
 import 'package:insgram_clone/core/constants/fire_keys.dart';
+import 'package:insgram_clone/generated/l10n.dart';
 import 'package:insgram_clone/modelView/authentication/auth_cubit.dart';
 
 class ProfileInfo extends StatelessWidget {
@@ -20,29 +21,29 @@ class ProfileInfo extends StatelessWidget {
       spacing: 10,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Row(
+        Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            StoryButton(
+            const StoryButton(
               addText: false,
               size: 40,
             ),
             Text(
-              '0\nposts',
+              '0\n${S.of(context).posts}',
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 16),
+              style: const TextStyle(fontSize: 16),
             ),
             Text(
-              '0\nFollowers',
+              '0\n${S.of(context).followers}',
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 16),
+              style: const TextStyle(fontSize: 16),
             ),
             Text(
-              '0\nFollowing',
+              '0\n${S.of(context).following}',
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 16),
+              style: const TextStyle(fontSize: 16),
             ),
-            Text(
+            const Text(
               '',
             ),
           ],
@@ -84,9 +85,9 @@ class ProfileInfo extends StatelessWidget {
               backgroundColor: Theme.of(context).primaryColor,
               side: BorderSide(color: Colors.grey.shade800),
             ),
-            child: const Text(
-              'Edit Profile',
-              style: TextStyle(fontSize: 13),
+            child: Text(
+              S.of(context).editProfile,
+              style: const TextStyle(fontSize: 13),
             ),
           ),
         ),
