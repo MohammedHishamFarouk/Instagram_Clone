@@ -5,12 +5,13 @@ import 'package:insgram_clone/core/constants/assets.dart';
 import 'package:insgram_clone/modelView/themeManager/theme_manager_cubit.dart';
 
 class CustomSvgIcon extends StatelessWidget {
-  const CustomSvgIcon(
-      {super.key,
-      required this.assetName,
-      this.height,
-      this.width,
-      this.color});
+  const CustomSvgIcon({
+    super.key,
+    required this.assetName,
+    this.height,
+    this.width,
+    this.color,
+  });
 
   final String assetName;
   final double? height;

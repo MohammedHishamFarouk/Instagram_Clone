@@ -2,7 +2,9 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:insgram_clone/core/components/custom_icons.dart';
 import 'package:insgram_clone/core/components/custom_textfield_widget.dart';
+import 'package:insgram_clone/core/constants/assets.dart';
 import 'package:insgram_clone/modelView/authentication/auth_cubit.dart';
 import 'package:insgram_clone/view/auth/components/auth_button.dart';
 
@@ -97,11 +99,10 @@ class LoginScreen extends StatelessWidget {
                           child: const Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Image(
-                                image: AssetImage(
-                                    'assets/icons/facebook_icon.png'),
-                                height: 17,
+                              CustomSvgIcon(
+                                assetName: Assets.facebookSVG,
                                 width: 17,
+                                height: 17,
                               ),
                               SizedBox(width: 5),
                               Text('Log in with Facebook'),

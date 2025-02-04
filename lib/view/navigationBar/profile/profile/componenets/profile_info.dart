@@ -28,17 +28,17 @@ class ProfileInfo extends StatelessWidget {
               size: 40,
             ),
             Text(
-              '54\nposts',
+              '0\nposts',
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 16),
             ),
             Text(
-              '54\nFollowers',
+              '0\nFollowers',
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 16),
             ),
             Text(
-              '54\nFollowing',
+              '0\nFollowing',
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 16),
             ),
@@ -53,16 +53,24 @@ class ProfileInfo extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text(
-                context.read<AuthCubit>().userData![FireKeys.fullName],
-                style: const TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.bold,
-                ),
+              BlocBuilder<AuthCubit, AuthState>(
+                builder: (context, state) {
+                  return Text(
+                    context.read<AuthCubit>().userData![FireKeys.fullName],
+                    style: const TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  );
+                },
               ),
-              Text(
-                context.read<AuthCubit>().userData![FireKeys.bio],
-                style: const TextStyle(fontSize: 12),
+              BlocBuilder<AuthCubit, AuthState>(
+                builder: (context, state) {
+                  return Text(
+                    context.read<AuthCubit>().userData![FireKeys.bio],
+                    style: const TextStyle(fontSize: 12),
+                  );
+                },
               )
             ],
           ),

@@ -18,6 +18,24 @@ class Assets {
 
   static const String plusSVG = 'Add Chat.svg';
 
+  static const String arrowDownSVG = 'arrow_down.svg';
+
+  static const String backArrowSVG = 'Back_arrow.svg';
+
+  static const String addPeopleSVG = 'add_people.svg';
+
+  static const String archiveSVG = 'archive.svg';
+
+  static const String closeFriendsSVG = 'close_friends.svg';
+
+  static const String openFaceSVG = 'open_face.svg';
+
+  static const String facebookSVG = 'facebook.svg';
+
+  static const String activitySVG = 'your_activity.svg';
+
+  static const String settingsSVG = 'settings.svg';
+
   static const String officialSVG = 'Official Icon.svg';
 
   static const String moreSVG = 'More Icon.svg';

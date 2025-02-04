@@ -75,9 +75,13 @@ class SearchScreen extends StatelessWidget {
         appBar: AppBar(
           toolbarHeight: 56,
           actions: [
-            Flexible(child: CustomSearchBar(onChanged: (query) {
-              context.read<SearchCubit>().searchUsersByUsername(query);
-            })),
+            Flexible(
+              child: CustomSearchBar(
+                onChanged: (query) {
+                  context.read<SearchCubit>().searchUsersByUsername(query);
+                },
+              ),
+            ),
             const SizedBox(width: 10),
             const CustomSvgIcon(assetName: Assets.liveSVG),
           ],

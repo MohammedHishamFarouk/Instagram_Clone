@@ -59,6 +59,7 @@ class CustomTable extends StatelessWidget {
                 text1: 'Bio            ',
                 borderColor: Colors.transparent,
                 maxLength: 100,
+                maxLines: 2,
                 controller: context.read<AuthCubit>().editBio,
               ),
             ],
@@ -114,11 +115,13 @@ class _NewTableRow extends StatelessWidget {
     this.maxLength,
     this.controller,
     this.enabled = true,
+    this.maxLines = 1,
   });
 
   final String text1;
   final Color borderColor;
   final int? maxLength;
+  final int? maxLines;
   final TextEditingController? controller;
   final bool enabled;
 
@@ -141,7 +144,7 @@ class _NewTableRow extends StatelessWidget {
                 fontSize: 15,
                 height: 1.2,
               ),
-              maxLines: null,
+              maxLines: maxLines,
               inputFormatters: [
                 LengthLimitingTextInputFormatter(maxLength),
               ],

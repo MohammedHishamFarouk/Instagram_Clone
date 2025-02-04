@@ -33,7 +33,7 @@ class MessagesScreen extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           onPressed: () => Navigator.pop(context),
-          icon: const Icon(Icons.arrow_back_ios_new_outlined),
+          icon: const CustomSvgIcon(assetName: Assets.backArrowSVG),
         ),
         title: const Row(
           mainAxisSize: MainAxisSize.min,
@@ -45,10 +45,7 @@ class MessagesScreen extends StatelessWidget {
               'jacob_w',
               style: TextStyle(fontSize: 16),
             ),
-            Icon(
-              Icons.keyboard_arrow_down_outlined,
-              size: 20,
-            )
+            CustomSvgIcon(assetName: Assets.arrowDownSVG),
           ],
         ),
         actions: [

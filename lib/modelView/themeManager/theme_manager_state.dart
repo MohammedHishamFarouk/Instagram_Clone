@@ -8,3 +8,5 @@ final class ThemeManagerInitial extends ThemeManagerState {}
 final class DarkTheme extends ThemeManagerState {}
 
 final class LightTheme extends ThemeManagerState {}
+
+final class DrawerMoved extends ThemeManagerState {}

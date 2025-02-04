@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:insgram_clone/modelView/authentication/auth_cubit.dart';
+import 'package:insgram_clone/modelView/themeManager/theme_manager_cubit.dart';
 
 class StartScreen extends StatelessWidget {
   const StartScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    context.read<ThemeManagerCubit>().loadTheme(context);
     return BlocListener<AuthCubit, AuthState>(
       listener: (context, state) {
         if (state is SignInSuccess) {

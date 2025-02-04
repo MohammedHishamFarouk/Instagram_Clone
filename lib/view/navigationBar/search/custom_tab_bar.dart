@@ -46,7 +46,6 @@ class CustomTabBar extends StatelessWidget {
         'Music',
       ),
     ];
-    int current = 0;
     return SizedBox(
       height: 32,
       child: ListView.builder(
@@ -59,7 +58,7 @@ class CustomTabBar extends StatelessWidget {
                   context.read<SearchCubit>().changeTab(index);
                 },
                 child: AnimatedContainer(
-                  duration: const Duration(milliseconds: 300),
+                  duration: const Duration(milliseconds: 200),
                   margin: const EdgeInsets.symmetric(horizontal: 5),
                   padding:
                       const EdgeInsets.symmetric(horizontal: 8, vertical: 0),

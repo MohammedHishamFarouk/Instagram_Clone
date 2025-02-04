@@ -44,9 +44,11 @@ class EditProfileScreen extends StatelessWidget {
                 style: TextButton.styleFrom(
                   padding: const EdgeInsets.only(left: 6),
                 ),
-                child: const Text(
+                child: Text(
                   'Cancel',
-                  style: TextStyle(color: Colors.white, fontSize: 16),
+                  style: TextStyle(
+                      color: Theme.of(context).secondaryHeaderColor,
+                      fontSize: 16),
                 ),
               ),
               title: const Text('Edit Profile'),

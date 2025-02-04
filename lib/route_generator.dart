@@ -5,6 +5,7 @@ import 'package:insgram_clone/view/auth/switch_account_screen.dart';
 import 'package:insgram_clone/view/navigationBar/bottom_navigationbar_screen.dart';
 import 'package:insgram_clone/view/navigationBar/directMessages/message_screen.dart';
 import 'package:insgram_clone/view/navigationBar/profile/editProfile/edit_profile_screen.dart';
+import 'package:insgram_clone/view/navigationBar/profile/settings_screen.dart';
 import 'package:insgram_clone/view/start_screen.dart';
 
 class RouteGenerator {
@@ -25,6 +26,8 @@ class RouteGenerator {
         return SlideRightRoute(page: const MessagesScreen());
       case '/editProfile':
         return SlideRightRoute(page: const EditProfileScreen());
+      case '/settings':
+        return SlideRightRoute(page: const SettingsScreen());
       default:
         return SlideRightRoute(page: const StartScreen());
     }

@@ -30,12 +30,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutConstrain(
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeManager.darkTheme,
-        onGenerateRoute: RouteGenerator.generateRoute,
-      ),
+    return BlocBuilder<ThemeManagerCubit, ThemeManagerState>(
+      builder: (context, state) {
+        return LayoutConstrain(
+          child: MaterialApp(
+            debugShowCheckedModeBanner: false,
+            theme: context.read<ThemeManagerCubit>().isDark
+                ? ThemeManager.darkTheme
+                : ThemeManager.lightTheme,
+            onGenerateRoute: RouteGenerator.generateRoute,
+          ),
+        );
+      },
     );
   }
 }
