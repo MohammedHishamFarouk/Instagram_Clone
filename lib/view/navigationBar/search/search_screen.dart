@@ -111,7 +111,7 @@ class SearchScreen extends StatelessWidget {
                       return ListView.separated(
                         itemCount: context.read<SearchCubit>().users.length,
                         separatorBuilder: (BuildContext context, int index) =>
-                            const SizedBox(height: 10),
+                            const SizedBox(height: 20),
                         itemBuilder: (context, index) {
                           final user = context.read<SearchCubit>().users[index];
                           return ChatBox(
