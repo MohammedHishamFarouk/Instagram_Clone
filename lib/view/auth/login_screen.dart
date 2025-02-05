@@ -16,7 +16,7 @@ class LoginScreen extends StatelessWidget {
         if (state is SignInSuccess) {
           Navigator.pushNamedAndRemoveUntil(
             context,
-            '/navigationScreen',
+            '/start',
             (Route<dynamic> route) => false,
           );
         } else if (state is SignInFailure) {

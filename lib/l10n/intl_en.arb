@@ -36,5 +36,6 @@
   "gender": "Gender    ",
   "cancel": "Cancel",
   "done": "Done",
-  "changeProfilePic": "Change Profile Photo"
+  "changeProfilePic": "Change Profile Photo",
+  "signOut": "Sign Out"
 }

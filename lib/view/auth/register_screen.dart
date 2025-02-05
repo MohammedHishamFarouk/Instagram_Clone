@@ -14,7 +14,7 @@ class RegisterScreen extends StatelessWidget {
         if (state is SignUpSuccess) {
           Navigator.pushNamedAndRemoveUntil(
             context,
-            '/navigationScreen',
+            '/start',
             (Route<dynamic> route) => false,
           );
         } else if (state is SignUpFailure) {

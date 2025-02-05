@@ -36,5 +36,6 @@
   "gender": "الجنس            ",
   "cancel": "إلغاء",
   "done": "تم",
-  "changeProfilePic": "تغيير صورة الملف الشخصي"
+  "changeProfilePic": "تغيير صورة الملف الشخصي",
+  "signOut": "تسجيل الخروج"
 }

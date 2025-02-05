@@ -5,4 +5,5 @@ class FireKeys {
   static const String bio = 'bio';
   static const String isDark = 'isDark';
   static const String isEnglish = 'isEnglish';
+  static const String userNameNormalized = 'NormalizedUserName';
 }

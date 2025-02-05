@@ -54,6 +54,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "searchForUsers": MessageLookupByLibrary.simpleMessage("Search for people"),
     "settings": MessageLookupByLibrary.simpleMessage("Settings"),
     "shop": MessageLookupByLibrary.simpleMessage("Shop"),
+    "signOut": MessageLookupByLibrary.simpleMessage("Sign Out"),
     "somethingWentWrong": MessageLookupByLibrary.simpleMessage(
       "Something went wrong",
     ),

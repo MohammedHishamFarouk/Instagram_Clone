@@ -22,8 +22,10 @@ class SearchCubit extends Cubit<SearchState> {
       emit(SearchLoading());
       final result = await _fireStore
           .collection('users')
-          .where(FireKeys.userName, isGreaterThanOrEqualTo: query)
-          .where(FireKeys.userName, isLessThan: query + 'z')
+          .where(FireKeys.userNameNormalized,
+              isGreaterThanOrEqualTo: query.toLowerCase())
+          .where(FireKeys.userNameNormalized,
+              isLessThan: query.toLowerCase() + 'z')
           .get();
       users = result.docs.map((doc) => doc.data()).toList();
       emit(SearchSuccess());

@@ -164,6 +164,7 @@ class AuthCubit extends Cubit<AuthState> {
       'Username': userName.text,
       'Website': editWebsite.text,
       'bio': editBio.text,
+      'NormalizedUserName': userName.text.toLowerCase(),
     });
   }
 
@@ -176,6 +177,7 @@ class AuthCubit extends Cubit<AuthState> {
           'Username': editUserName.text,
           'Website': editWebsite.text,
           'bio': editBio.text,
+          'NormalizedUserName': editUserName.text.toLowerCase(),
         }, SetOptions(merge: true));
         userData![FireKeys.fullName] = editName.text;
         userData![FireKeys.userName] = editUserName.text;
@@ -197,3 +199,22 @@ class AuthCubit extends Cubit<AuthState> {
     );
   }
 }
+
+// void addRandomUsers(int count) {
+//   for (int i = 0; i < count; i++) {
+//     String firstName = randomAlpha(5);
+//     String lastName = randomAlpha(5);
+//     String bio = randomAlpha(20);
+//
+//     Map<String, String> userData = {
+//       FireKeys.fullName: firstName,
+//       FireKeys.userName: lastName,
+//       FireKeys.bio: bio,
+//       FireKeys.userNameNormalized: lastName.toLowerCase(),
+//     };
+//
+//     _fireStore.collection('users').add(userData).then((_) {
+//       print('Added user: $firstName');
+//     });
+//   }
+// }

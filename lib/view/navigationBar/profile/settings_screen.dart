@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:insgram_clone/core/components/custom_icons.dart';
 import 'package:insgram_clone/core/constants/assets.dart';
 import 'package:insgram_clone/generated/l10n.dart';
+import 'package:insgram_clone/modelView/authentication/auth_cubit.dart';
 import 'package:insgram_clone/modelView/themeManager/theme_manager_cubit.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -37,6 +38,22 @@ class SettingsScreen extends StatelessWidget {
               children: [
                 Text(S.of(context).changeLang),
                 const _ToggleButton(true),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    context.read<AuthCubit>().signOut(context);
+                    context.read<ThemeManagerCubit>().signOutLocale();
+                  },
+                  style: TextButton.styleFrom(
+                    foregroundColor: Colors.red,
+                    padding: const EdgeInsets.all(0),
+                  ),
+                  child: Text(S.of(context).signOut),
+                ),
               ],
             ),
           ],

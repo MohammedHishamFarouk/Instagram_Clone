@@ -71,6 +71,11 @@ class ThemeManagerCubit extends Cubit<ThemeManagerState> {
     emit(DrawerMoved());
   }
 
+  void signOutLocale() {
+    isEnglish = true;
+    emit(ThemeChanged());
+  }
+
   void tabSelected(int index) {
     current = index;
     emit(TabChanged());

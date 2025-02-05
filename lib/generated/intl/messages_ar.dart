@@ -56,6 +56,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "searchForUsers": MessageLookupByLibrary.simpleMessage("بحث عن مستخدمين"),
     "settings": MessageLookupByLibrary.simpleMessage("إعدادات"),
     "shop": MessageLookupByLibrary.simpleMessage("تسوق"),
+    "signOut": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
     "somethingWentWrong": MessageLookupByLibrary.simpleMessage("حدث خطأ ما"),
     "sports": MessageLookupByLibrary.simpleMessage("رياضة"),
     "style": MessageLookupByLibrary.simpleMessage("أزياء"),

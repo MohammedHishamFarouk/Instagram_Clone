@@ -115,7 +115,7 @@ class SearchScreen extends StatelessWidget {
                         itemBuilder: (context, index) {
                           final user = context.read<SearchCubit>().users[index];
                           return ChatBox(
-                            name: user[FireKeys.fullName],
+                            name: user[FireKeys.userName],
                             latestMessage: user[FireKeys.bio] ?? '',
                             sentTime: '',
                             showIcon: false,
