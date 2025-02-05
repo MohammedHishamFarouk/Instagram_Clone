@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:insgram_clone/core/components/custom_icons.dart';
 import 'package:insgram_clone/core/constants/assets.dart';
-import 'package:insgram_clone/generated/l10n.dart';
 
 class CustomSearchBar extends StatelessWidget {
-  const CustomSearchBar({super.key, this.controller, this.onChanged});
+  const CustomSearchBar(
+      {super.key, this.controller, this.onChanged, required this.hintText});
 
   final TextEditingController? controller;
   final ValueChanged<String>? onChanged;
+  final String hintText;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,7 @@ class CustomSearchBar extends StatelessWidget {
       child: SearchBar(
         controller: controller,
         leading: const CustomSvgIcon(assetName: Assets.searchBarSVG),
-        hintText: S.of(context).search,
+        hintText: hintText,
         onChanged: onChanged,
       ),
     );

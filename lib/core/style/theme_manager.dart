@@ -128,9 +128,9 @@ class ThemeManager {
       splashFactory: NoSplash.splashFactory,
       overlayColor: WidgetStatePropertyAll(Colors.transparent),
       dividerColor: Colors.transparent,
-      indicatorColor: Colors.white38,
-      labelColor: Colors.blue,
-      unselectedLabelColor: Colors.white54,
+      indicatorColor: Colors.grey,
+      labelColor: ColorManager.semiTransBlue,
+      unselectedLabelColor: Colors.grey,
       indicatorSize: TabBarIndicatorSize.tab,
     ),
     searchBarTheme: SearchBarThemeData(

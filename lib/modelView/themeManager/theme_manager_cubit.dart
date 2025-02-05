@@ -16,8 +16,9 @@ class ThemeManagerCubit extends Cubit<ThemeManagerState> {
   bool isDark = true;
   bool isEnglish = true;
   bool isDrawerOpen = false;
+  int current = 0;
 
-  changeTheme(BuildContext context) async {
+  void changeTheme(BuildContext context) async {
     try {
       isDark = !isDark;
       await _fireStore
@@ -33,7 +34,7 @@ class ThemeManagerCubit extends Cubit<ThemeManagerState> {
     }
   }
 
-  changeLocale(BuildContext context) async {
+  void changeLocale(BuildContext context) async {
     try {
       isEnglish = !isEnglish;
       await _fireStore
@@ -68,5 +69,10 @@ class ThemeManagerCubit extends Cubit<ThemeManagerState> {
   void toggleDrawer() {
     isDrawerOpen = !isDrawerOpen;
     emit(DrawerMoved());
+  }
+
+  void tabSelected(int index) {
+    current = index;
+    emit(TabChanged());
   }
 }

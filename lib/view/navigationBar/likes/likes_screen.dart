@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:insgram_clone/generated/l10n.dart';
 
 class LikesScreen extends StatelessWidget {
   const LikesScreen({super.key});
@@ -10,13 +11,13 @@ class LikesScreen extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           toolbarHeight: 0,
-          bottom: const TabBar(
+          bottom: TabBar(
             tabs: [
               Tab(
-                icon: Text('Following'),
+                icon: Text(S.of(context).following),
               ),
               Tab(
-                icon: Text('You'),
+                icon: Text(S.of(context).you),
               ),
             ],
           ),

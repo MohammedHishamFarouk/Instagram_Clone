@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:insgram_clone/generated/l10n.dart';
 import 'package:insgram_clone/modelView/authentication/auth_cubit.dart';
+import 'package:insgram_clone/view/navigationBar/profile/editProfile/components/custom_table.dart';
 import 'package:insgram_clone/view/navigationBar/profile/editProfile/components/loading_overlay.dart';
-import 'package:insgram_clone/view/navigationBar/profile/editProfile/custom_table.dart';
 
 class EditProfileScreen extends StatelessWidget {
   const EditProfileScreen({super.key});
@@ -41,24 +42,26 @@ class EditProfileScreen extends StatelessWidget {
                   authCubit().editWebsite.text = website;
                   authCubit().editBio.text = bio;
                 },
-                style: TextButton.styleFrom(
-                  padding: const EdgeInsets.only(left: 6),
-                ),
-                child: Text(
-                  'Cancel',
-                  style: TextStyle(
+                style: TextButton.styleFrom(padding: EdgeInsets.zero),
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 6.0),
+                  child: Text(
+                    S.of(context).cancel,
+                    style: TextStyle(
                       color: Theme.of(context).secondaryHeaderColor,
-                      fontSize: 16),
+                      fontSize: 16,
+                    ),
+                  ),
                 ),
               ),
-              title: const Text('Edit Profile'),
+              title: Text(S.of(context).editProfile),
               actions: [
                 TextButton(
                   onPressed: () =>
                       context.read<AuthCubit>().updaterUserDetails(),
-                  child: const Text(
-                    'Done',
-                    style: TextStyle(fontSize: 16),
+                  child: Text(
+                    S.of(context).done,
+                    style: const TextStyle(fontSize: 16),
                   ),
                 )
               ],

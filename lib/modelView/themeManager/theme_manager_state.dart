@@ -10,3 +10,5 @@ final class ThemeChanged extends ThemeManagerState {}
 final class LocaleChanged extends ThemeManagerState {}
 
 final class DrawerMoved extends ThemeManagerState {}
+
+final class TabChanged extends ThemeManagerState {}

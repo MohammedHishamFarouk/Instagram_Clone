@@ -60,6 +60,16 @@ class S {
     return Intl.message('camera', name: 'camera', desc: '', args: []);
   }
 
+  /// `Search for people`
+  String get searchForUsers {
+    return Intl.message(
+      'Search for people',
+      name: 'searchForUsers',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Search`
   String get search {
     return Intl.message('Search', name: 'search', desc: '', args: []);
@@ -215,6 +225,81 @@ class S {
     return Intl.message(
       'Change Language',
       name: 'changeLang',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name       `
+  String get name {
+    return Intl.message('Name       ', name: 'name', desc: '', args: []);
+  }
+
+  /// `UserName`
+  String get userName {
+    return Intl.message('UserName', name: 'userName', desc: '', args: []);
+  }
+
+  /// `Website    `
+  String get website {
+    return Intl.message('Website    ', name: 'website', desc: '', args: []);
+  }
+
+  /// `Bio            `
+  String get bio {
+    return Intl.message('Bio            ', name: 'bio', desc: '', args: []);
+  }
+
+  /// `Switch to Professional Account`
+  String get switchToProf {
+    return Intl.message(
+      'Switch to Professional Account',
+      name: 'switchToProf',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Private Information`
+  String get privateInfo {
+    return Intl.message(
+      'Private Information',
+      name: 'privateInfo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email       `
+  String get email {
+    return Intl.message('Email       ', name: 'email', desc: '', args: []);
+  }
+
+  /// `Phone      `
+  String get phone {
+    return Intl.message('Phone      ', name: 'phone', desc: '', args: []);
+  }
+
+  /// `Gender    `
+  String get gender {
+    return Intl.message('Gender    ', name: 'gender', desc: '', args: []);
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message('Cancel', name: 'cancel', desc: '', args: []);
+  }
+
+  /// `Done`
+  String get done {
+    return Intl.message('Done', name: 'done', desc: '', args: []);
+  }
+
+  /// `Change Profile Photo`
+  String get changeProfilePic {
+    return Intl.message(
+      'Change Profile Photo',
+      name: 'changeProfilePic',
       desc: '',
       args: [],
     );

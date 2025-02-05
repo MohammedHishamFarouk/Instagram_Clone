@@ -5,6 +5,7 @@ import 'package:insgram_clone/core/constants/assets.dart';
 import 'package:insgram_clone/core/constants/fire_keys.dart';
 import 'package:insgram_clone/generated/l10n.dart';
 import 'package:insgram_clone/modelView/authentication/auth_cubit.dart';
+import 'package:insgram_clone/modelView/themeManager/theme_manager_cubit.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({
@@ -90,6 +91,7 @@ class CustomDrawer extends StatelessWidget {
             title: Text(S.of(context).settings),
             onTap: () {
               Navigator.pushNamed(context, '/settings');
+              context.read<ThemeManagerCubit>().toggleDrawer();
             },
           ),
         ],

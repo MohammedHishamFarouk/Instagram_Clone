@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:insgram_clone/core/components/custom_icons.dart';
@@ -22,7 +20,11 @@ class LoginScreen extends StatelessWidget {
             (Route<dynamic> route) => false,
           );
         } else if (state is SignInFailure) {
-          log(state.errorMessage);
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(state.errorMessage),
+            ),
+          );
         }
       },
       builder: (context, state) {
@@ -158,12 +160,13 @@ class LoginScreen extends StatelessWidget {
                     spacing: 15,
                     children: [
                       const Divider(
-                        thickness: 0.05,
+                        thickness: 0.1,
                         color: Colors.grey,
                       ),
                       Padding(
                         padding: EdgeInsets.only(
-                            bottom: MediaQuery.paddingOf(context).bottom),
+                          bottom: MediaQuery.paddingOf(context).bottom,
+                        ),
                         child: const Text(
                           'Instagram from Facebook',
                           style: TextStyle(

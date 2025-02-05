@@ -81,6 +81,7 @@ class SearchScreen extends StatelessWidget {
                 onChanged: (query) {
                   context.read<SearchCubit>().searchUsersByUsername(query);
                 },
+                hintText: S.of(context).searchForUsers,
               ),
             ),
             const SizedBox(width: 10),

@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:insgram_clone/core/constants/assets.dart';
 import 'package:insgram_clone/core/style/color_manager.dart';
+import 'package:insgram_clone/generated/l10n.dart';
 import 'package:insgram_clone/modelView/authentication/auth_cubit.dart';
 
 class CustomTable extends StatelessWidget {
@@ -26,9 +27,9 @@ class CustomTable extends StatelessWidget {
         Center(
           child: TextButton(
             onPressed: () {},
-            child: const Text(
-              'Change Profile Photo',
-              style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+            child: Text(
+              S.of(context).changeProfilePic,
+              style: const TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
             ),
           ),
         ),
@@ -42,21 +43,21 @@ class CustomTable extends StatelessWidget {
             spacing: 5,
             children: [
               _NewTableRow(
-                text1: 'Name       ',
+                text1: S.of(context).name,
                 controller: context.read<AuthCubit>().editName,
                 maxLength: 30,
               ),
               _NewTableRow(
-                text1: 'UserName',
+                text1: S.of(context).userName,
                 controller: context.read<AuthCubit>().editUserName,
                 maxLength: 20,
               ),
               _NewTableRow(
-                text1: 'Website    ',
+                text1: S.of(context).website,
                 controller: context.read<AuthCubit>().editWebsite,
               ),
               _NewTableRow(
-                text1: 'Bio            ',
+                text1: S.of(context).bio,
                 borderColor: Colors.transparent,
                 maxLength: 100,
                 maxLines: 2,
@@ -70,16 +71,16 @@ class CustomTable extends StatelessWidget {
         ),
         TextButton(
           onPressed: () {},
-          child: const Text(
-            'Switch to Professional Account',
-            style: TextStyle(fontSize: 15),
+          child: Text(
+            S.of(context).switchToProf,
+            style: const TextStyle(fontSize: 15),
           ),
         ),
-        const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 14.0, vertical: 15),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 14.0, vertical: 15),
           child: Text(
-            'Private Information',
-            style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+            S.of(context).privateInfo,
+            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
           ),
         ),
         Padding(
@@ -88,16 +89,16 @@ class CustomTable extends StatelessWidget {
             spacing: 5,
             children: [
               _NewTableRow(
-                text1: 'Email       ',
+                text1: S.of(context).email,
                 enabled: false,
                 controller: context.read<AuthCubit>().editEmail,
               ),
-              const _NewTableRow(
-                text1: 'Phone      ',
+              _NewTableRow(
+                text1: S.of(context).phone,
                 enabled: false,
               ),
-              const _NewTableRow(
-                text1: 'Gender    ',
+              _NewTableRow(
+                text1: S.of(context).gender,
                 enabled: false,
               ),
             ],

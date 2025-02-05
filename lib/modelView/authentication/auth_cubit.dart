@@ -83,10 +83,25 @@ class AuthCubit extends Cubit<AuthState> {
       );
       user = _auth.currentUser;
       emit(SignInSuccess());
+    } on FirebaseAuthException catch (e) {
+      switch (e.code) {
+        case 'invalid-credential':
+          emit(
+            SignInFailure(
+              errorMessage: 'email or password is invalid',
+            ),
+          );
+        default:
+          emit(
+            SignInFailure(
+              errorMessage: 'something went wrong,please try again',
+            ),
+          );
+      }
     } catch (e) {
       emit(
         SignInFailure(
-          errorMessage: e.toString(),
+          errorMessage: 'something went wrong,please try again',
         ),
       );
     }
@@ -106,10 +121,38 @@ class AuthCubit extends Cubit<AuthState> {
         await _addUserDetails();
       }
       emit(SignUpSuccess());
+    } on FirebaseAuthException catch (e) {
+      switch (e.code) {
+        case 'email-already-in-use':
+          emit(
+            SignUpFailure(
+              errorMessage: 'An account already exists for that email.',
+            ),
+          );
+        case 'invalid-email':
+          emit(
+            SignUpFailure(
+              errorMessage: 'The email address is not valid.',
+            ),
+          );
+        case 'invalid-credential':
+          emit(
+            SignUpFailure(
+              errorMessage: 'email or password is invalid',
+            ),
+          );
+        default:
+          log(e.code.toString());
+          emit(
+            SignUpFailure(
+              errorMessage: 'something went wrong,please try again',
+            ),
+          );
+      }
     } catch (e) {
       emit(
-        SignInFailure(
-          errorMessage: e.toString(),
+        SignUpFailure(
+          errorMessage: 'something went wrong,please try again',
         ),
       );
     }
@@ -148,6 +191,9 @@ class AuthCubit extends Cubit<AuthState> {
   Future<void> signOut(BuildContext context) async {
     await _auth.signOut();
     Navigator.pushNamedAndRemoveUntil(
-        context, '/login', (Route<dynamic> route) => false);
+      context,
+      '/login',
+      (Route<dynamic> route) => false,
+    );
   }
 }

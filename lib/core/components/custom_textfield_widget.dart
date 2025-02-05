@@ -34,9 +34,9 @@ class CustomTextFieldWidget extends StatelessWidget {
         // ToDo Color Switching
         child: TextFormField(
           controller: controller,
-          minLines: null,
-          maxLines: null,
-          expands: true,
+          // minLines: null,
+          // maxLines: null,
+          // expands: true,
           obscureText: obscureText,
           cursorColor: Colors.white70,
           style: const TextStyle(color: Colors.white),
@@ -60,15 +60,15 @@ class CustomTextFieldWidget extends StatelessWidget {
                 : null,
             filled: true,
             hintText: hintText,
-            hintStyle: TextStyle(color: Colors.grey.withOpacity(0.5)),
+            hintStyle: const TextStyle(color: Colors.white38),
             fillColor: Colors.grey.shade900,
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(6),
-              borderSide: const BorderSide(color: Colors.grey, width: 0.3),
+              borderSide: const BorderSide(color: Colors.white30),
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(6),
-              borderSide: const BorderSide(color: Colors.grey),
+              borderSide: const BorderSide(color: Colors.white30),
             ),
           ),
           onChanged: (value) {

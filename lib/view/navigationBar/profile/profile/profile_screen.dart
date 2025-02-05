@@ -94,6 +94,7 @@ class ProfileScreen extends StatelessWidget {
                         child: TabBarView(
                           children: [
                             GridView.builder(
+                              shrinkWrap: true,
                               gridDelegate:
                                   const SliverGridDelegateWithFixedCrossAxisCount(
                                 crossAxisCount: 3,
@@ -105,8 +106,8 @@ class ProfileScreen extends StatelessWidget {
                               },
                               itemCount: assetsTrial.length,
                             ),
-                            const Card(
-                              color: Colors.blueGrey,
+                            const DecoratedBox(
+                              decoration: BoxDecoration(color: Colors.blueGrey),
                             ),
                           ],
                         ),

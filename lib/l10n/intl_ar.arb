@@ -1,5 +1,6 @@
 {
   "camera": "كاميرا",
+  "searchForUsers": "بحث عن مستخدمين",
   "search": "بحث",
   "IGTV": "IGTV",
   "shop": "تسوق",
@@ -23,5 +24,17 @@
   "openFacebook": "فتح فيسبوك",
   "settings": "إعدادات",
   "you": "أنت",
-  "changeLang": "تغيير اللغة"
+  "changeLang": "تغيير اللغة",
+  "name": "الاسم               ",
+  "userName": "اسم المستخدم  ",
+  "website": "الموقع الإلكتروني",
+  "bio": "السيرة الذاتية",
+  "switchToProf": "التحويل إلى حساب مهني",
+  "privateInfo": "المعلومات الخاصة",
+  "email": "البريد الإلكتروني",
+  "phone": "الهاتف            ",
+  "gender": "الجنس            ",
+  "cancel": "إلغاء",
+  "done": "تم",
+  "changeProfilePic": "تغيير صورة الملف الشخصي"
 }

@@ -1,5 +1,6 @@
 {
   "camera": "camera",
+  "searchForUsers": "Search for people",
   "search": "Search",
   "IGTV": "IGTV",
   "shop": "Shop",
@@ -23,5 +24,17 @@
   "openFacebook": "Open Facebook",
   "settings": "Settings",
   "you": "You",
-  "changeLang": "Change Language"
+  "changeLang": "Change Language",
+  "name": "Name       ",
+  "userName": "UserName",
+  "website": "Website    ",
+  "bio": "Bio            ",
+  "switchToProf": "Switch to Professional Account",
+  "privateInfo": "Private Information",
+  "email": "Email       ",
+  "phone": "Phone      ",
+  "gender": "Gender    ",
+  "cancel": "Cancel",
+  "done": "Done",
+  "changeProfilePic": "Change Profile Photo"
 }

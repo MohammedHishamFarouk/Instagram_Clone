@@ -61,7 +61,9 @@ class MessagesScreen extends StatelessWidget {
         child: Column(
           spacing: 10,
           children: [
-            const CustomSearchBar(),
+            CustomSearchBar(
+              hintText: S.of(context).search,
+            ),
             Expanded(
               child: ListView.builder(
                 itemExtent: 80,

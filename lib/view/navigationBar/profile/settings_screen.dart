@@ -29,14 +29,14 @@ class SettingsScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(S.of(context).changeTheme),
-                const _ToggleButton(),
+                const _ToggleButton(false),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(S.of(context).changeLang),
-                const _ToggleButton(),
+                const _ToggleButton(true),
               ],
             ),
           ],
@@ -47,51 +47,66 @@ class SettingsScreen extends StatelessWidget {
 }
 
 class _ToggleButton extends StatelessWidget {
-  const _ToggleButton();
+  const _ToggleButton(this.isLangMode);
+
+  final bool isLangMode;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => context.read<ThemeManagerCubit>().changeTheme(context),
+      onTap: () {
+        final themeManager = context.read<ThemeManagerCubit>();
+        if (isLangMode) {
+          themeManager.changeLocale(context);
+        } else {
+          themeManager.changeTheme(context);
+        }
+      },
       child: BlocBuilder<ThemeManagerCubit, ThemeManagerState>(
         builder: (context, state) {
-          final bool isDark = context.read<ThemeManagerCubit>().isDark;
+          final themeManager = context.read<ThemeManagerCubit>();
+          final isDark = themeManager.isDark;
+          final isEnglish = themeManager.isEnglish;
           return AnimatedContainer(
             duration: const Duration(milliseconds: 300),
             width: 60,
             height: 30,
             decoration: BoxDecoration(
-              color: !isDark ? Colors.yellow : Colors.blueGrey,
               borderRadius: BorderRadius.circular(15.0),
             ),
-            child: Stack(
-              children: [
-                AnimatedPositioned(
-                  duration: const Duration(milliseconds: 300),
-                  curve: Curves.easeIn,
-                  left: isDark ? 0.0 : 30.0,
-                  right: isDark ? 30.0 : 0.0,
-                  child: Container(
-                    width: 30.0,
-                    height: 30.0,
-                    decoration: BoxDecoration(
-                      color: Theme.of(context).secondaryHeaderColor,
-                      borderRadius: BorderRadius.circular(15.0),
-                    ),
-                    child: Center(
-                      child: Icon(
-                        !isDark ? Icons.wb_sunny : Icons.nightlight_round,
-                        color: !isDark ? Colors.orange : Colors.black,
-                        size: 15.0, // Adjusted icon size
-                      ),
-                    ),
-                  ),
+            child: AnimatedPositioned(
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeIn,
+              child: Container(
+                width: 30.0,
+                height: 30.0,
+                decoration: BoxDecoration(
+                  color: Theme.of(context).secondaryHeaderColor,
+                  borderRadius: BorderRadius.circular(15.0),
                 ),
-              ],
+                child: Center(
+                  child: _getIconOrText(context, isLangMode, isEnglish, isDark),
+                ),
+              ),
             ),
           );
         },
       ),
+    );
+  }
+
+  Widget _getIconOrText(
+      BuildContext context, bool isLangMode, bool isEnglish, bool isDark) {
+    if (isLangMode) {
+      return Text(
+        isEnglish ? 'EN' : 'AR',
+        style: TextStyle(color: Theme.of(context).primaryColor),
+      );
+    }
+    return Icon(
+      isDark ? Icons.nightlight_round : Icons.wb_sunny,
+      color: isDark ? Colors.black : Colors.orange,
+      size: 15.0,
     );
   }
 }

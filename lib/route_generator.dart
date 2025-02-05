@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:insgram_clone/modelView/themeManager/theme_manager_cubit.dart';
 import 'package:insgram_clone/view/auth/login_screen.dart';
 import 'package:insgram_clone/view/auth/register_screen.dart';
 import 'package:insgram_clone/view/auth/switch_account_screen.dart';
@@ -10,7 +12,7 @@ import 'package:insgram_clone/view/start_screen.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
-    final args = settings.arguments;
+    // final args = settings.arguments;
     switch (settings.name) {
       case '/start':
         return SlideRightRoute(page: const StartScreen());
@@ -41,7 +43,9 @@ class SlideRightRoute extends PageRouteBuilder {
       : super(
           pageBuilder: (context, animation, secondaryAnimation) => page,
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
-            const begin = Offset(1.0, 0.0);
+            final begin = context.read<ThemeManagerCubit>().isEnglish
+                ? const Offset(-1.0, 0.0)
+                : const Offset(1.0, 0.0);
             const end = Offset.zero;
             const curve = Curves.ease;
 
