@@ -111,7 +111,9 @@ class RegisterScreen extends StatelessWidget {
                         ),
                         const Padding(
                           padding: EdgeInsets.symmetric(
-                              horizontal: 15.0, vertical: 20),
+                            horizontal: 15.0,
+                            vertical: 20,
+                          ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [

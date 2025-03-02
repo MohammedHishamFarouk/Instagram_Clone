@@ -10,14 +10,15 @@ class StartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<AuthCubit, AuthState>(
       listener: (context, state) {
+        final navigator = Navigator.of(context);
         if (state is SignInSuccess) {
           context.read<ThemeManagerCubit>().loadTheme(context);
           Future.delayed(const Duration(seconds: 2), () {
-            Navigator.pushReplacementNamed(context, '/navigationScreen');
+            navigator.pushReplacementNamed('/navigationScreen');
           });
         } else if (state is SignInFailure) {
           Future.delayed(const Duration(seconds: 2), () {
-            Navigator.pushReplacementNamed(context, '/login');
+            navigator.pushReplacementNamed('/login');
           });
         }
       },

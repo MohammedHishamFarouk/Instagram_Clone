@@ -83,6 +83,8 @@ class AuthCubit extends Cubit<AuthState> {
       );
       user = _auth.currentUser;
       emit(SignInSuccess());
+      signInEmail.clear();
+      signInPassword.clear();
     } on FirebaseAuthException catch (e) {
       switch (e.code) {
         case 'invalid-credential':
@@ -121,6 +123,10 @@ class AuthCubit extends Cubit<AuthState> {
         await _addUserDetails();
       }
       emit(SignUpSuccess());
+      signUpEmail.clear();
+      signUpPassword.clear();
+      fullName.clear();
+      userName.clear();
     } on FirebaseAuthException catch (e) {
       switch (e.code) {
         case 'email-already-in-use':
@@ -191,9 +197,9 @@ class AuthCubit extends Cubit<AuthState> {
   }
 
   Future<void> signOut(BuildContext context) async {
+    final navigator = Navigator.of(context);
     await _auth.signOut();
-    Navigator.pushNamedAndRemoveUntil(
-      context,
+    navigator.pushNamedAndRemoveUntil(
       '/login',
       (Route<dynamic> route) => false,
     );

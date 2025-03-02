@@ -15,31 +15,31 @@ class RouteGenerator {
     // final args = settings.arguments;
     switch (settings.name) {
       case '/start':
-        return SlideRightRoute(page: const StartScreen());
+        return _SlideRightRoute(page: const StartScreen());
       case '/switchAccount':
-        return SlideRightRoute(page: const SwitchAccountScreen());
+        return _SlideRightRoute(page: const SwitchAccountScreen());
       case '/login':
-        return SlideRightRoute(page: const LoginScreen());
+        return _SlideRightRoute(page: const LoginScreen());
       case '/register':
-        return SlideRightRoute(page: const RegisterScreen());
+        return _SlideRightRoute(page: const RegisterScreen());
       case '/navigationScreen':
-        return SlideRightRoute(page: const BottomNavigationBarScreen());
+        return _SlideRightRoute(page: const BottomNavigationBarScreen());
       case '/messages':
-        return SlideRightRoute(page: const MessagesScreen());
+        return _SlideRightRoute(page: const MessagesScreen());
       case '/editProfile':
-        return SlideRightRoute(page: const EditProfileScreen());
+        return _SlideRightRoute(page: const EditProfileScreen());
       case '/settings':
-        return SlideRightRoute(page: const SettingsScreen());
+        return _SlideRightRoute(page: const SettingsScreen());
       default:
-        return SlideRightRoute(page: const StartScreen());
+        return _SlideRightRoute(page: const StartScreen());
     }
   }
 }
 
-class SlideRightRoute extends PageRouteBuilder {
+class _SlideRightRoute extends PageRouteBuilder {
   final Widget page;
 
-  SlideRightRoute({required this.page})
+  _SlideRightRoute({required this.page})
       : super(
           pageBuilder: (context, animation, secondaryAnimation) => page,
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
