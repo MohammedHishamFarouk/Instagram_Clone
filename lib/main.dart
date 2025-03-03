@@ -33,6 +33,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ThemeManagerCubit, ThemeManagerState>(
+      buildWhen: (previous, current) => current is ThemeChanged,
       builder: (context, state) {
         final ThemeManagerCubit theme = context.read<ThemeManagerCubit>();
         return LayoutConstrain(

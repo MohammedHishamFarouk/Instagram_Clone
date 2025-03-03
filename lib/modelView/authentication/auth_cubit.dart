@@ -48,7 +48,7 @@ class AuthCubit extends Cubit<AuthState> {
   checkForUser() {
     _auth.authStateChanges().listen((user) async {
       if (user != null) {
-        emit(SignUpLoading());
+        emit(SignInLoading());
         DocumentSnapshot userDoc =
             await _fireStore.collection('users').doc(user.uid).get();
         this.user = _auth.currentUser;
@@ -66,7 +66,7 @@ class AuthCubit extends Cubit<AuthState> {
           }
           editEmail.text = user.email.toString();
         }
-        emit(SignInSuccess());
+        emit(UserPresent());
       } else {
         log('user not found');
         emit(SignInFailure(errorMessage: 'user not found'));
@@ -200,7 +200,7 @@ class AuthCubit extends Cubit<AuthState> {
     final navigator = Navigator.of(context);
     await _auth.signOut();
     navigator.pushNamedAndRemoveUntil(
-      '/login',
+      '/start',
       (Route<dynamic> route) => false,
     );
   }

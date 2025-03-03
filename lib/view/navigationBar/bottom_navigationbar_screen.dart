@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:insgram_clone/core/components/custom_icons.dart';
 import 'package:insgram_clone/core/constants/assets.dart';
@@ -26,6 +28,7 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
 
   @override
   Widget build(BuildContext context) {
+    log('nagatioesfafga');
     return Scaffold(
       body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(

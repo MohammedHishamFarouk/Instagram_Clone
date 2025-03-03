@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:insgram_clone/modelView/authentication/auth_cubit.dart';
@@ -8,10 +10,11 @@ class StartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    log('start');
     return BlocListener<AuthCubit, AuthState>(
       listener: (context, state) {
         final navigator = Navigator.of(context);
-        if (state is SignInSuccess) {
+        if (state is UserPresent) {
           context.read<ThemeManagerCubit>().loadTheme(context);
           Future.delayed(const Duration(seconds: 2), () {
             navigator.pushReplacementNamed('/navigationScreen');

@@ -36,3 +36,5 @@ final class EditProfileFailure extends AuthState {
 
   EditProfileFailure({required this.errorMessage});
 }
+
+final class UserPresent extends AuthState {}
