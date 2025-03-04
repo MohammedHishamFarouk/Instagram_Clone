@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:insgram_clone/core/components/custom_icons.dart';
@@ -69,6 +71,7 @@ class ProfileInfo extends StatelessWidget {
               ),
               BlocBuilder<AuthCubit, AuthState>(
                 builder: (context, state) {
+                  log(state.toString());
                   return Text(
                     context.read<AuthCubit>().userData![FireKeys.bio],
                     style: const TextStyle(fontSize: 12),
@@ -107,31 +110,41 @@ class ProfileInfo extends StatelessWidget {
         SizedBox(
           height: 32,
           child: BlocBuilder<ThemeManagerCubit, ThemeManagerState>(
+              buildWhen: (previous, current) =>
+                  current is ThemeChanged || current is LocaleChanged,
               builder: (context, state) {
-            ThemeManagerCubit themeManager = context.read<ThemeManagerCubit>();
-            return TabBar(
-              tabs: [
-                Tab(
-                  icon: CustomSvgIcon(
-                    assetName: Assets.gridSVG,
-                    color: themeManager.current == 0
-                        ? ColorManager.semiTransBlue
-                        : Colors.grey,
-                  ),
-                ),
-                Tab(
-                  icon: CustomSvgIcon(
-                    assetName: Assets.tagsSVG,
-                    color:
-                        themeManager.current == 1 ? Colors.blue : Colors.grey,
-                  ),
-                ),
-              ],
-              onTap: (index) {
-                themeManager.tabSelected(index);
-              },
-            );
-          }),
+                ThemeManagerCubit themeManager =
+                    context.read<ThemeManagerCubit>();
+                return BlocBuilder<ThemeManagerCubit, ThemeManagerState>(
+                  buildWhen: (previous, current) => current is TabChanged,
+                  builder: (context, state) {
+                    log(state.toString());
+                    return TabBar(
+                      tabs: [
+                        Tab(
+                          icon: CustomSvgIcon(
+                            assetName: Assets.gridSVG,
+                            color: themeManager.current == 0
+                                ? ColorManager.semiTransBlue
+                                : Colors.grey,
+                          ),
+                        ),
+                        Tab(
+                          icon: CustomSvgIcon(
+                            assetName: Assets.tagsSVG,
+                            color: themeManager.current == 1
+                                ? Colors.blue
+                                : Colors.grey,
+                          ),
+                        ),
+                      ],
+                      onTap: (index) {
+                        themeManager.tabSelected(index);
+                      },
+                    );
+                  },
+                );
+              }),
         ),
       ],
     );

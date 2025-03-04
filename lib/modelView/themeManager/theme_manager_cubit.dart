@@ -56,11 +56,13 @@ class ThemeManagerCubit extends Cubit<ThemeManagerState> {
           .collection('users')
           .doc(context.read<AuthCubit>().user!.uid)
           .get();
-      if (doc.exists && doc.data() != null) {
+      if (doc.data()?[FireKeys.isDark] != null) {
         isDark = doc.data()![FireKeys.isDark];
-        isEnglish = doc.data()![FireKeys.isEnglish];
-        emit(ThemeChanged());
       }
+      if (doc.data()?[FireKeys.isEnglish] != null) {
+        isEnglish = doc.data()![FireKeys.isEnglish];
+      }
+      emit(ThemeChanged());
     } catch (e) {
       log('here is the error${e.toString()}');
     }

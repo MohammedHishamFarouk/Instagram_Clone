@@ -19,9 +19,9 @@ void main() async {
 
   runApp(MultiBlocProvider(
     providers: [
-      BlocProvider(create: (context) => ThemeManagerCubit()),
-      BlocProvider(create: (context) => SearchCubit()),
-      BlocProvider(create: (context) => AuthCubit()..checkForUser()),
+      BlocProvider(create: (_) => ThemeManagerCubit()),
+      BlocProvider(create: (_) => SearchCubit()),
+      BlocProvider(create: (_) => AuthCubit()),
     ],
     child: const MyApp(),
   ));
@@ -33,7 +33,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ThemeManagerCubit, ThemeManagerState>(
-      buildWhen: (previous, current) => current is ThemeChanged,
+      buildWhen: (previous, current) =>
+          current is ThemeChanged || current is LocaleChanged,
       builder: (context, state) {
         final ThemeManagerCubit theme = context.read<ThemeManagerCubit>();
         return LayoutConstrain(

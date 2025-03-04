@@ -21,6 +21,7 @@ class CustomSvgIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ThemeManagerCubit, ThemeManagerState>(
+      buildWhen: (previous, current) => current is ThemeChanged,
       builder: (context, state) {
         //by ensuring that the name for the dark and light icons are the same
         //we can then call the right icon for the right theme by its location in the assets
