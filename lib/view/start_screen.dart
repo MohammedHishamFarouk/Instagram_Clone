@@ -10,7 +10,7 @@ class StartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    log('start');
+    context.read<AuthCubit>().checkForUser();
     return BlocListener<AuthCubit, AuthState>(
       listener: (context, state) {
         final navigator = Navigator.of(context);
@@ -19,10 +19,12 @@ class StartScreen extends StatelessWidget {
           Future.delayed(const Duration(seconds: 2), () {
             navigator.pushReplacementNamed('/navigationScreen');
           });
-        } else if (state is SignInFailure) {
+        } else if (state is UserLoggedOut) {
           Future.delayed(const Duration(seconds: 2), () {
             navigator.pushReplacementNamed('/login');
           });
+        } else if (state is SignUpSuccess) {
+          log('sign up success');
         }
       },
       child: const Scaffold(

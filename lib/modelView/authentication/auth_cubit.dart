@@ -69,7 +69,7 @@ class AuthCubit extends Cubit<AuthState> {
         emit(UserPresent());
       } else {
         log('user not found');
-        emit(SignInFailure(errorMessage: 'user not found'));
+        emit(UserLoggedOut(errorMessage: 'user not found'));
       }
     });
   }

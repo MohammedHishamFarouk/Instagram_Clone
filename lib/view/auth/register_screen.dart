@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:insgram_clone/core/components/custom_textfield_widget.dart';
@@ -11,10 +9,10 @@ class RegisterScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    log('page is rebuilding after navigation');
     return BlocListener<AuthCubit, AuthState>(
+      listenWhen: (previous, current) =>
+          current is SignUpSuccess || current is SignUpFailure,
       listener: (context, state) {
-        log('BlocListener 2 triggered: $state');
         if (state is SignUpSuccess) {
           Navigator.pushNamedAndRemoveUntil(
             context,

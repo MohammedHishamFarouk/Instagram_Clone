@@ -38,3 +38,9 @@ final class EditProfileFailure extends AuthState {
 }
 
 final class UserPresent extends AuthState {}
+
+final class UserLoggedOut extends AuthState {
+  final String errorMessage;
+
+  UserLoggedOut({required this.errorMessage});
+}

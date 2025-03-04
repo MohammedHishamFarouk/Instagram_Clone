@@ -12,6 +12,8 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocListener<AuthCubit, AuthState>(
+      listenWhen: (previous, current) =>
+          current is SignInSuccess || current is SignInFailure,
       listener: (context, state) {
         if (state is SignInSuccess) {
           Navigator.pushNamedAndRemoveUntil(
