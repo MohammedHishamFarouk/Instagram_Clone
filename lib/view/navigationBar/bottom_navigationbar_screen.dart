@@ -1,8 +1,6 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:insgram_clone/core/components/custom_icons.dart';
-import 'package:insgram_clone/core/constants/assets.dart';
+import 'package:insgram_clone/view/core/components/custom_icons.dart';
+import 'package:insgram_clone/view/core/constants/assets.dart';
 import 'package:insgram_clone/view/navigationBar/home/home_screen.dart';
 import 'package:insgram_clone/view/navigationBar/likes/likes_screen.dart';
 import 'package:insgram_clone/view/navigationBar/profile/profile/profile_screen.dart';
@@ -28,7 +26,6 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
 
   @override
   Widget build(BuildContext context) {
-    log('nagatioesfafga');
     return Scaffold(
       body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(

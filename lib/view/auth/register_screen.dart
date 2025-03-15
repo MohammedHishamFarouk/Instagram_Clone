@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:insgram_clone/core/components/custom_textfield_widget.dart';
 import 'package:insgram_clone/modelView/authentication/auth_cubit.dart';
 import 'package:insgram_clone/view/auth/components/auth_button.dart';
+import 'package:insgram_clone/view/core/components/custom_text_field.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});
@@ -57,24 +57,24 @@ class RegisterScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      CustomTextFieldWidget(
+                      CustomTextField(
                         hintText: 'Email',
                         controller: context.read<AuthCubit>().signUpEmail,
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(vertical: 10.0),
-                        child: CustomTextFieldWidget(
+                        child: CustomTextField(
                           hintText: 'Password',
                           controller: context.read<AuthCubit>().signUpPassword,
                         ),
                       ),
-                      CustomTextFieldWidget(
+                      CustomTextField(
                         hintText: 'Full Name',
                         controller: context.read<AuthCubit>().fullName,
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(vertical: 10.0),
-                        child: CustomTextFieldWidget(
+                        child: CustomTextField(
                           hintText: 'Username',
                           controller: context.read<AuthCubit>().userName,
                         ),

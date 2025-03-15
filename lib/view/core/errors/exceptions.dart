@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
-import 'package:insgram_clone/core/errors/error_model.dart';
+import 'package:insgram_clone/view/core/errors/error_model.dart';
 
 class ServerException implements Exception {
   final ErrorModel errorModel;

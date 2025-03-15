@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:insgram_clone/core/components/custom_icons.dart';
-import 'package:insgram_clone/core/components/post.dart';
-import 'package:insgram_clone/core/components/story_button.dart';
-import 'package:insgram_clone/core/constants/assets.dart';
+import 'package:insgram_clone/view/core/components/custom_icons.dart';
+import 'package:insgram_clone/view/core/components/post.dart';
+import 'package:insgram_clone/view/core/components/story_button.dart';
+import 'package:insgram_clone/view/core/constants/assets.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

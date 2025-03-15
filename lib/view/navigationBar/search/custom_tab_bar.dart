@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:insgram_clone/core/components/custom_icons.dart';
-import 'package:insgram_clone/core/constants/assets.dart';
-import 'package:insgram_clone/core/style/color_manager.dart';
-import 'package:insgram_clone/generated/l10n.dart';
 import 'package:insgram_clone/modelView/search/search_cubit.dart';
+import 'package:insgram_clone/view/core/components/custom_icons.dart';
+import 'package:insgram_clone/view/core/constants/assets.dart';
+import 'package:insgram_clone/view/core/generated/l10n.dart';
+import 'package:insgram_clone/view/core/style/color_manager.dart';
 
 class CustomTabBar extends StatelessWidget {
   const CustomTabBar({super.key});

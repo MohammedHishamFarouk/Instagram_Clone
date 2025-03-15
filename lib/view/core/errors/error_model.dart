@@ -1,4 +1,4 @@
-import 'package:insgram_clone/core/api/end_points.dart';
+import 'package:insgram_clone/view/core/api/end_points.dart';
 
 class ErrorModel {
   final int status;

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:insgram_clone/core/style/color_manager.dart';
+import 'package:insgram_clone/view/core/style/color_manager.dart';
 
 class ThemeManager {
   static final ThemeData darkTheme = ThemeData(

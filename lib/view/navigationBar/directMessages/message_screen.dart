@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:insgram_clone/core/components/custom_icons.dart';
-import 'package:insgram_clone/core/components/custom_search_bar.dart';
-import 'package:insgram_clone/core/constants/assets.dart';
-import 'package:insgram_clone/generated/l10n.dart';
+import 'package:insgram_clone/view/core/components/custom_icons.dart';
+import 'package:insgram_clone/view/core/components/custom_search_bar.dart';
+import 'package:insgram_clone/view/core/constants/assets.dart';
+import 'package:insgram_clone/view/core/generated/l10n.dart';
 import 'package:insgram_clone/view/navigationBar/directMessages/components/chat_box.dart';
 
 class MessagesScreen extends StatelessWidget {

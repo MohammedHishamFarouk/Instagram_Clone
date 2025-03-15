@@ -1,75 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:insgram_clone/core/components/custom_icons.dart';
-import 'package:insgram_clone/core/components/custom_search_bar.dart';
-import 'package:insgram_clone/core/constants/assets.dart';
-import 'package:insgram_clone/core/constants/fire_keys.dart';
-import 'package:insgram_clone/generated/l10n.dart';
 import 'package:insgram_clone/modelView/search/search_cubit.dart';
+import 'package:insgram_clone/view/core/components/custom_icons.dart';
+import 'package:insgram_clone/view/core/components/custom_search_bar.dart';
+import 'package:insgram_clone/view/core/constants/assets.dart';
+import 'package:insgram_clone/view/core/constants/fire_keys.dart';
+import 'package:insgram_clone/view/core/generated/l10n.dart';
 import 'package:insgram_clone/view/navigationBar/directMessages/components/chat_box.dart';
 import 'package:insgram_clone/view/navigationBar/search/custom_tab_bar.dart';
+
+import '../../trial.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> assetsTrial = const [
-      Image(
-        image: AssetImage(Assets.noProfile),
-        fit: BoxFit.cover,
-      ),
-      Image(
-        image: AssetImage(Assets.trial3),
-        fit: BoxFit.cover,
-      ),
-      Image(
-        image: AssetImage(Assets.trial1),
-        fit: BoxFit.cover,
-      ),
-      Image(
-        image: AssetImage(Assets.trial2),
-        fit: BoxFit.cover,
-      ),
-      Image(
-        image: AssetImage(Assets.trial1),
-        fit: BoxFit.cover,
-      ),
-      Image(
-        image: AssetImage(Assets.noProfile),
-        fit: BoxFit.cover,
-      ),
-      Image(
-        image: AssetImage(Assets.trial3),
-        fit: BoxFit.cover,
-      ),
-      Image(
-        image: AssetImage(Assets.trial1),
-        fit: BoxFit.cover,
-      ),
-      Image(
-        image: AssetImage(Assets.trial2),
-        fit: BoxFit.cover,
-      ),
-      Image(
-        image: AssetImage(Assets.trial1),
-        fit: BoxFit.cover,
-      ),
-      Image(
-        image: AssetImage(Assets.noProfile),
-        fit: BoxFit.cover,
-      ),
-      Image(
-        image: AssetImage(Assets.trial3),
-        fit: BoxFit.cover,
-      ),
-      Image(
-        image: AssetImage(Assets.trial1),
-        fit: BoxFit.cover,
-      ),
-    ];
-
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: Scaffold(

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:insgram_clone/core/constants/assets.dart';
-import 'package:insgram_clone/core/style/color_manager.dart';
-import 'package:insgram_clone/generated/l10n.dart';
 import 'package:insgram_clone/modelView/authentication/auth_cubit.dart';
+import 'package:insgram_clone/view/core/constants/assets.dart';
+import 'package:insgram_clone/view/core/generated/l10n.dart';
+import 'package:insgram_clone/view/core/style/color_manager.dart';
 
 class CustomTable extends StatelessWidget {
   const CustomTable({super.key});

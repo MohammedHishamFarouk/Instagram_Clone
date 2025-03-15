@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:insgram_clone/core/components/custom_icons.dart';
-import 'package:insgram_clone/core/constants/assets.dart';
-import 'package:insgram_clone/core/style/color_manager.dart';
+import 'package:insgram_clone/view/core/components/custom_icons.dart';
+import 'package:insgram_clone/view/core/constants/assets.dart';
+import 'package:insgram_clone/view/core/style/color_manager.dart';
 
 class CreateNewStory extends StatelessWidget {
   const CreateNewStory({super.key});

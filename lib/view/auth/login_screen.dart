@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:insgram_clone/core/components/custom_icons.dart';
-import 'package:insgram_clone/core/components/custom_textfield_widget.dart';
-import 'package:insgram_clone/core/constants/assets.dart';
 import 'package:insgram_clone/modelView/authentication/auth_cubit.dart';
 import 'package:insgram_clone/view/auth/components/auth_button.dart';
+import 'package:insgram_clone/view/core/components/custom_icons.dart';
+import 'package:insgram_clone/view/core/components/custom_text_field.dart';
+import 'package:insgram_clone/view/core/constants/assets.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -59,13 +59,13 @@ class LoginScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      CustomTextFieldWidget(
+                      CustomTextField(
                         hintText: 'Email',
                         controller: context.read<AuthCubit>().signInEmail,
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(vertical: 15.0),
-                        child: CustomTextFieldWidget(
+                        child: CustomTextField(
                           hintText: 'Password',
                           controller: context.read<AuthCubit>().signInPassword,
                         ),

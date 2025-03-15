@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:insgram_clone/modelView/authentication/auth_cubit.dart';
 
-class CustomTextFieldWidget extends StatelessWidget {
-  const CustomTextFieldWidget({
+class CustomTextField extends StatelessWidget {
+  const CustomTextField({
     super.key,
     required this.hintText,
     this.prefixImage,

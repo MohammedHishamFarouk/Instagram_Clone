@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
-import 'package:insgram_clone/core/api/api_consumer.dart';
-import 'package:insgram_clone/core/api/api_interceptors.dart';
-import 'package:insgram_clone/core/api/end_points.dart';
-import 'package:insgram_clone/core/errors/exceptions.dart';
+import 'package:insgram_clone/view/core/api/api_consumer.dart';
+import 'package:insgram_clone/view/core/api/api_interceptors.dart';
+import 'package:insgram_clone/view/core/api/end_points.dart';
+import 'package:insgram_clone/view/core/errors/exceptions.dart';
 
 class DioConsumer extends ApiConsumer {
   final Dio dio;
@@ -20,6 +20,7 @@ class DioConsumer extends ApiConsumer {
       error: true,
     ));
   }
+
   @override
   delete(
     String path, {

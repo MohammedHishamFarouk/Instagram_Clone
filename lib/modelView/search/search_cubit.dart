@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:insgram_clone/core/constants/fire_keys.dart';
+import 'package:insgram_clone/view/core/constants/fire_keys.dart';
 import 'package:meta/meta.dart';
 
 part 'search_state.dart';

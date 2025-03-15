@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:insgram_clone/generated/l10n.dart';
 import 'package:insgram_clone/modelView/authentication/auth_cubit.dart';
+import 'package:insgram_clone/view/core/generated/l10n.dart';
 import 'package:insgram_clone/view/navigationBar/profile/editProfile/components/custom_table.dart';
 import 'package:insgram_clone/view/navigationBar/profile/editProfile/components/loading_overlay.dart';
 

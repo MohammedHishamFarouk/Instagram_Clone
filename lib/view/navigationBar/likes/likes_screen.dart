@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:insgram_clone/generated/l10n.dart';
+import 'package:insgram_clone/view/core/generated/l10n.dart';
 
 class LikesScreen extends StatelessWidget {
   const LikesScreen({super.key});

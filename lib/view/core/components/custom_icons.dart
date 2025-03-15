@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:insgram_clone/core/constants/assets.dart';
 import 'package:insgram_clone/modelView/themeManager/theme_manager_cubit.dart';
+import 'package:insgram_clone/view/core/constants/assets.dart';
 
 class CustomSvgIcon extends StatelessWidget {
   const CustomSvgIcon({

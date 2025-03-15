@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:insgram_clone/core/constants/assets.dart';
 import 'package:insgram_clone/view/auth/components/auth_button.dart';
+import 'package:insgram_clone/view/core/constants/assets.dart';
 
 class SwitchAccountScreen extends StatelessWidget {
   const SwitchAccountScreen({super.key});

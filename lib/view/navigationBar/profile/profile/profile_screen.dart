@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:insgram_clone/core/components/create_new_story.dart';
-import 'package:insgram_clone/core/components/custom_icons.dart';
-import 'package:insgram_clone/core/components/story_button.dart';
-import 'package:insgram_clone/core/constants/assets.dart';
-import 'package:insgram_clone/core/constants/fire_keys.dart';
 import 'package:insgram_clone/modelView/authentication/auth_cubit.dart';
 import 'package:insgram_clone/modelView/themeManager/theme_manager_cubit.dart';
+import 'package:insgram_clone/view/core/components/create_new_story.dart';
+import 'package:insgram_clone/view/core/components/custom_icons.dart';
+import 'package:insgram_clone/view/core/components/story_button.dart';
+import 'package:insgram_clone/view/core/constants/assets.dart';
+import 'package:insgram_clone/view/core/constants/fire_keys.dart';
 import 'package:insgram_clone/view/navigationBar/profile/profile/componenets/custom_drawer.dart';
 import 'package:insgram_clone/view/navigationBar/profile/profile/componenets/drawer_animation.dart';
 import 'package:insgram_clone/view/navigationBar/profile/profile/componenets/profile_info.dart';
+
+import '../../../trial.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -25,17 +27,6 @@ class ProfileScreen extends StatelessWidget {
       const CreateNewStory(),
       const StoryButton(),
       const StoryButton(),
-    ];
-
-    List<Widget> assetsTrial = const [
-      Image(
-        image: AssetImage(Assets.noProfile),
-        fit: BoxFit.cover,
-      ),
-      Image(
-        image: AssetImage(Assets.trial3),
-        fit: BoxFit.cover,
-      ),
     ];
 
     return DefaultTabController(

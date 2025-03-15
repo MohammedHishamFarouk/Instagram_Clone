@@ -2,13 +2,13 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:insgram_clone/core/firebase_options.dart';
-import 'package:insgram_clone/core/style/theme_manager.dart';
-import 'package:insgram_clone/generated/l10n.dart';
 import 'package:insgram_clone/modelView/authentication/auth_cubit.dart';
 import 'package:insgram_clone/modelView/search/search_cubit.dart';
 import 'package:insgram_clone/modelView/themeManager/theme_manager_cubit.dart';
 import 'package:insgram_clone/route_generator.dart';
+import 'package:insgram_clone/view/core/firebase_options.dart';
+import 'package:insgram_clone/view/core/generated/l10n.dart';
+import 'package:insgram_clone/view/core/style/theme_manager.dart';
 import 'package:insgram_clone/view/layout_constrain.dart';
 
 void main() async {
