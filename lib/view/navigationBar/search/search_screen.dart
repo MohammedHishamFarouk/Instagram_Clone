@@ -5,7 +5,7 @@ import 'package:insgram_clone/modelView/search/search_cubit.dart';
 import 'package:insgram_clone/view/core/components/custom_icons.dart';
 import 'package:insgram_clone/view/core/components/custom_search_bar.dart';
 import 'package:insgram_clone/view/core/constants/assets.dart';
-import 'package:insgram_clone/view/core/constants/fire_keys.dart';
+import 'package:insgram_clone/view/core/constants/cloud_service_keys.dart';
 import 'package:insgram_clone/view/core/generated/l10n.dart';
 import 'package:insgram_clone/view/navigationBar/directMessages/components/chat_box.dart';
 import 'package:insgram_clone/view/navigationBar/search/custom_tab_bar.dart';

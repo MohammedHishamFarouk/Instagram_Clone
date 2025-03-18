@@ -8,14 +8,14 @@ import 'package:insgram_clone/view/navigationBar/bottom_navigationbar_screen.dar
 import 'package:insgram_clone/view/navigationBar/directMessages/message_screen.dart';
 import 'package:insgram_clone/view/navigationBar/profile/editProfile/edit_profile_screen.dart';
 import 'package:insgram_clone/view/navigationBar/profile/settings_screen.dart';
-import 'package:insgram_clone/view/start_screen.dart';
+import 'package:insgram_clone/view/splash_screen.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     // final args = settings.arguments;
     switch (settings.name) {
       case '/start':
-        return _SlideRightRoute(page: const StartScreen());
+        return _SlideRightRoute(page: const SplashScreen());
       case '/switchAccount':
         return _SlideRightRoute(page: const SwitchAccountScreen());
       case '/login':
@@ -31,7 +31,7 @@ class RouteGenerator {
       case '/settings':
         return _SlideRightRoute(page: const SettingsScreen());
       default:
-        return _SlideRightRoute(page: const StartScreen());
+        return _SlideRightRoute(page: const SplashScreen());
     }
   }
 }

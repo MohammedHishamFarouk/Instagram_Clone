@@ -6,17 +6,24 @@ import 'package:insgram_clone/modelView/authentication/auth_cubit.dart';
 import 'package:insgram_clone/modelView/search/search_cubit.dart';
 import 'package:insgram_clone/modelView/themeManager/theme_manager_cubit.dart';
 import 'package:insgram_clone/route_generator.dart';
+import 'package:insgram_clone/view/core/constants/cloud_service_keys.dart';
 import 'package:insgram_clone/view/core/firebase_options.dart';
 import 'package:insgram_clone/view/core/generated/l10n.dart';
 import 'package:insgram_clone/view/core/style/theme_manager.dart';
 import 'package:insgram_clone/view/layout_constrain.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  // Initialize Firebase
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-
+  // Initialize Supabase
+  Supabase.initialize(
+    url: 'https://qozysnhglfphidrqmjku.supabase.co',
+    anonKey: SupabaseKeys.anonKey,
+  );
   runApp(MultiBlocProvider(
     providers: [
       BlocProvider(create: (_) => ThemeManagerCubit()),

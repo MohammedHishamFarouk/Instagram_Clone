@@ -4,7 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:insgram_clone/modelView/authentication/auth_cubit.dart';
-import 'package:insgram_clone/view/core/constants/fire_keys.dart';
+import 'package:insgram_clone/view/core/constants/cloud_service_keys.dart';
 
 part 'theme_manager_state.dart';
 
