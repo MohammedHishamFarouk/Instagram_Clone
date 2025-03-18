@@ -63,9 +63,21 @@ class RegisterScreen extends StatelessWidget {
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(vertical: 10.0),
-                        child: CustomTextField(
-                          hintText: 'Password',
-                          controller: context.read<AuthCubit>().signUpPassword,
+                        child: BlocBuilder<AuthCubit, AuthState>(
+                          builder: (context, state) {
+                            return CustomTextField(
+                              hintText: 'Password',
+                              controller:
+                                  context.read<AuthCubit>().signUpPassword,
+                              obscureText: true,
+                              addSuffixIcon: true,
+                              suffixIcon: Icon(
+                                Icons.remove_red_eye_rounded,
+                                color: Colors.grey.shade700,
+                              ),
+                              onSuffixTapped: () {},
+                            );
+                          },
                         ),
                       ),
                       CustomTextField(
@@ -80,6 +92,10 @@ class RegisterScreen extends StatelessWidget {
                         ),
                       ),
                       BlocBuilder<AuthCubit, AuthState>(
+                        buildWhen: (previous, current) =>
+                            current is SignUpLoading ||
+                            current is SignUpFailure ||
+                            current is SignUpSuccess,
                         builder: (context, state) {
                           return Padding(
                             padding: const EdgeInsets.symmetric(vertical: 25.0),

@@ -68,6 +68,13 @@ class LoginScreen extends StatelessWidget {
                         child: CustomTextField(
                           hintText: 'Password',
                           controller: context.read<AuthCubit>().signInPassword,
+                          obscureText: true,
+                          addSuffixIcon: true,
+                          suffixIcon: Icon(
+                            Icons.remove_red_eye_rounded,
+                            color: Colors.grey.shade700,
+                          ),
+                          onSuffixTapped: () {},
                         ),
                       ),
                       Align(
