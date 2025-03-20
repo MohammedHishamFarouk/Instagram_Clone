@@ -44,3 +44,5 @@ final class UserLoggedOut extends AuthState {
 
   UserLoggedOut({required this.errorMessage});
 }
+
+final class PasswordObscured extends AuthState {}

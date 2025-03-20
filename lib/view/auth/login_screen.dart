@@ -11,6 +11,7 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool obscureText = true;
     return BlocListener<AuthCubit, AuthState>(
       listenWhen: (previous, current) =>
           current is SignInSuccess || current is SignInFailure,
@@ -65,16 +66,26 @@ class LoginScreen extends StatelessWidget {
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(vertical: 15.0),
-                        child: CustomTextField(
-                          hintText: 'Password',
-                          controller: context.read<AuthCubit>().signInPassword,
-                          obscureText: true,
-                          addSuffixIcon: true,
-                          suffixIcon: Icon(
-                            Icons.remove_red_eye_rounded,
-                            color: Colors.grey.shade700,
-                          ),
-                          onSuffixTapped: () {},
+                        child: BlocBuilder<AuthCubit, AuthState>(
+                          buildWhen: (previous, current) =>
+                              current is PasswordObscured,
+                          builder: (context, state) {
+                            return CustomTextField(
+                              hintText: 'Password',
+                              controller:
+                                  context.read<AuthCubit>().signInPassword,
+                              obscureText: obscureText,
+                              addSuffixIcon: true,
+                              suffixIcon: Icon(
+                                Icons.remove_red_eye_rounded,
+                                color: Colors.grey.shade700,
+                              ),
+                              onSuffixTapped: () {
+                                obscureText = !obscureText;
+                                context.read<AuthCubit>().toggleObscureText();
+                              },
+                            );
+                          },
                         ),
                       ),
                       Align(

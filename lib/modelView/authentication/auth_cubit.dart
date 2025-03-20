@@ -43,6 +43,10 @@ class AuthCubit extends Cubit<AuthState> {
     emit(TextFieldFilled());
   }
 
+  void toggleObscureText() {
+    emit(PasswordObscured());
+  }
+
   Map<String, dynamic>? userData;
 
   checkForUser() {
