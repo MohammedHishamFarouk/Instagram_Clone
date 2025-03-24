@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:insgram_clone/modelView/authentication/auth_cubit.dart';
+import 'package:insgram_clone/modelView/imageUpload/upload_image_cubit.dart';
 import 'package:insgram_clone/modelView/search/search_cubit.dart';
 import 'package:insgram_clone/modelView/themeManager/theme_manager_cubit.dart';
 import 'package:insgram_clone/route_generator.dart';
@@ -29,6 +30,7 @@ void main() async {
       BlocProvider(create: (_) => ThemeManagerCubit()),
       BlocProvider(create: (_) => SearchCubit()),
       BlocProvider(create: (_) => AuthCubit()),
+      BlocProvider(create: (_) => UploadImageCubit()),
     ],
     child: const MyApp(),
   ));
