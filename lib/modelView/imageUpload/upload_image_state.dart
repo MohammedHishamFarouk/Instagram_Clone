@@ -15,8 +15,4 @@ class UploadImageError extends UploadImageState {
   UploadImageError(this.message);
 }
 
-final class NewPosition extends UploadImageState {
-  final Offset position;
-
-  NewPosition({required this.position});
-}
+final class NewPosition extends UploadImageState {}

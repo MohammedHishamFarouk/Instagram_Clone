@@ -11,6 +11,7 @@ class EditProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final authCubit = context.read<AuthCubit>;
+    //this saves the original string in the fields until the user clicks done
     String name = authCubit().editName.text;
     String userName = authCubit().editUserName.text;
     String website = authCubit().editWebsite.text;
@@ -34,6 +35,7 @@ class EditProfileScreen extends StatelessWidget {
           isLoading: isLoading,
           child: Scaffold(
             appBar: AppBar(
+              leadingWidth: 70,
               leading: TextButton(
                 onPressed: () {
                   Navigator.pop(context);
@@ -44,7 +46,7 @@ class EditProfileScreen extends StatelessWidget {
                 },
                 style: TextButton.styleFrom(padding: EdgeInsets.zero),
                 child: Padding(
-                  padding: const EdgeInsets.only(right: 6.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 6.0),
                   child: Text(
                     S.of(context).cancel,
                     style: TextStyle(
@@ -66,7 +68,9 @@ class EditProfileScreen extends StatelessWidget {
                 )
               ],
             ),
-            body: const SingleChildScrollView(child: CustomTable()),
+            body: const SingleChildScrollView(
+              child: CustomTable(),
+            ),
           ),
         );
       },

@@ -10,6 +10,8 @@ part 'upload_image_state.dart';
 class UploadImageCubit extends Cubit<UploadImageState> {
   UploadImageCubit() : super(UploadImageInitial());
 
+  Offset position = Offset.zero;
+
   final ImagePicker _picker = ImagePicker();
   File? selectedImage;
 
@@ -33,6 +35,7 @@ class UploadImageCubit extends Cubit<UploadImageState> {
   }
 
   void updatePosition(Offset newPosition) {
-    emit(NewPosition(position: newPosition));
+    position = newPosition;
+    emit(NewPosition());
   }
 }

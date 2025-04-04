@@ -31,7 +31,9 @@ class RouteGenerator {
       case '/settings':
         return _SlideRightRoute(page: const SettingsScreen());
       default:
-        return _SlideRightRoute(page: const SplashScreen());
+        return _SlideRightRoute(
+          page: const SplashScreen(),
+        );
     }
   }
 }
