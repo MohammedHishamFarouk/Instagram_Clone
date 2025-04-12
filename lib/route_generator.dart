@@ -31,7 +31,9 @@ class RouteGenerator {
       case '/settings':
         return _SlideRightRoute(page: const SettingsScreen());
       default:
-        return _SlideRightRoute(page: const SplashScreen());
+        return _SlideRightRoute(
+          page: const SplashScreen(),
+        );
     }
   }
 }
@@ -41,23 +43,21 @@ class _SlideRightRoute extends PageRouteBuilder {
 
   _SlideRightRoute({required this.page})
       : super(
-    pageBuilder: (context, animation, secondaryAnimation) => page,
-    transitionsBuilder: (context, animation, secondaryAnimation, child) {
-      final begin = context
-          .read<ThemeManagerCubit>()
-          .isEnglish
-          ? const Offset(-1.0, 0.0)
-          : const Offset(1.0, 0.0);
-      const end = Offset.zero;
-      const curve = Curves.ease;
+          pageBuilder: (context, animation, secondaryAnimation) => page,
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            final begin = context.read<ThemeManagerCubit>().isEnglish
+                ? const Offset(-1.0, 0.0)
+                : const Offset(1.0, 0.0);
+            const end = Offset.zero;
+            const curve = Curves.ease;
 
-      var tween =
-      Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+            var tween =
+                Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
 
-      return SlideTransition(
-        position: animation.drive(tween),
-        child: child,
-      );
-    },
-  );
+            return SlideTransition(
+              position: animation.drive(tween),
+              child: child,
+            );
+          },
+        );
 }
