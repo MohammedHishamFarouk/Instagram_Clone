@@ -29,7 +29,7 @@ class RouteGenerator {
       case '/editProfile':
         return _SlideRightRoute(page: const EditProfileScreen());
       case '/settings':
-        return _SlideRightRoute(page: const SettingsScreen());
+        return _SlideRightRoute(page: const SettingsScreen(),);
       default:
         return _SlideRightRoute(
           page: const SplashScreen(),
