@@ -32,7 +32,7 @@ class RouteGenerator {
         return _SlideRightRoute(page: const SettingsScreen(),);
       default:
         return _SlideRightRoute(
-          page: const SplashScreen(),
+          page: const SplashScreen()
         );
     }
   }
